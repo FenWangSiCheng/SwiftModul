@@ -12,12 +12,12 @@ import Photos
 class PermissionTool: NSObject {
 
     public static let shareInstance: PermissionTool = PermissionTool()
-    
-    public func requestCameraPermission(success:@escaping () -> (Void), failure:@escaping () -> (Void)) {
+
+    public func requestCameraPermission(success:@escaping () -> Void, failure:@escaping () -> Void) {
         let authStatus = AVCaptureDevice.authorizationStatus(for: .video)
         if authStatus == .restricted || authStatus == .denied {
             failure()
-        }else {
+        } else {
             success()
         }
     }

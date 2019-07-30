@@ -8,25 +8,22 @@
 
 import UIKit
 
-
 class FindTableViewCell: UITableViewCell {
 
     @IBOutlet weak var headerImageView: UIImageView!
-    
+
     @IBOutlet weak var nameLabel: UILabel!
-    
+
     var model: TestModel? {
         didSet {
             self.headerImageView.setImage(model?.pic51, AssetsImageNames.placeHodelName)
             self.nameLabel.text = model?.name
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-      
-    }
 
-  
+    }
 
 }

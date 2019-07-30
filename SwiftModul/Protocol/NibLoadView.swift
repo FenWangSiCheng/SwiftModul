@@ -9,17 +9,17 @@
 import UIKit
 
 protocol NibLoadView {
-    
+
 }
 
-extension NibLoadView where Self : UIView {
-    
+extension NibLoadView where Self: UIView {
+
     /// loadViewFromXibName
     ///
     /// - Parameter nibname: xibName
     /// - Returns: view
-    static func loadFromNib(_ nibname : String? = nil) -> Self {
+    static func loadFromNib(_ nibname: String? = nil) -> Self? {
         let loadName = nibname == nil ? "\(self)" : nibname!
-        return Bundle.main.loadNibNamed(loadName, owner: nil, options: nil)?.first as! Self
+        return Bundle.main.loadNibNamed(loadName, owner: nil, options: nil)?.first as? Self
     }
 }

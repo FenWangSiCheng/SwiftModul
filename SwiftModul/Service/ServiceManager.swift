@@ -14,9 +14,9 @@ internal struct Config {
         print(ProcessInfo.processInfo.arguments)
         return ProcessInfo.processInfo.arguments.contains("UI-TESTING")
     }
-    
+
     static var netWork: Network = {
-        
+
         if isUITesting() {
             let json = ProcessInfo.processInfo.environment["FakeJSON"]
             if let json = json {
@@ -25,13 +25,12 @@ internal struct Config {
                     let url = URL(target: target).absoluteString
                     return Endpoint(url: url, sampleResponseClosure: {.networkResponse(200, data)}, method: target.method, task: target.task, httpHeaderFields: target.headers)
                 }
-                let provider = MoyaProvider<NetworkTarget>(endpointClosure: endpointClosure,stubClosure: MoyaProvider.immediatelyStub)
+                let provider = MoyaProvider<NetworkTarget>(endpointClosure: endpointClosure, stubClosure: MoyaProvider.immediatelyStub)
                 return Network(provider: provider)
-            }else {
+            } else {
                 return Network.instance
             }
-        }
-        else {
+        } else {
             return Network.instance
         }
     }()
@@ -40,7 +39,7 @@ internal struct Config {
 let serviceManager = ServiceManager.shared
 
 class ServiceManager {
-    
+
     internal let networking: Network
     internal init(networking: Network) {
         self.networking = networking
@@ -48,6 +47,6 @@ class ServiceManager {
 
     static let shared = ServiceManager(networking: Config.netWork)
 
-    lazy var findService : FindService = FindService(networking: networking)
+    lazy var findService: FindService = FindService(networking: networking)
 
 }

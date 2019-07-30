@@ -14,13 +14,13 @@ struct CacheToolFactory {
 }
 
 public class CacheTool<T: Codable>: NSObject {
-    
+
     public func getShareInstance<T>() -> CacheTool<T> {
        return CacheTool<T>()
     }
 
     private var storage: Storage<T>?
-    
+
     override init() {
         let diskConfig = DiskConfig(name: "KaitoCache")
         let memoryConfig = MemoryConfig(expiry: .never)
@@ -30,20 +30,20 @@ public class CacheTool<T: Codable>: NSObject {
             print(error.localizedDescription)
         }
     }
-    
+
     /// remove all data
-    public func removeAllCache(completion: @escaping (Bool)->()) {
+    public func removeAllCache(completion: @escaping (Bool) -> Void) {
         storage?.async.removeAll(completion: { result in
             DispatchQueue.main.async {
                 switch result {
-                    case .value: completion(true)
-                    case .error: completion(false)
+                case .value: completion(true)
+                case .error: completion(false)
                 }
             }
         })
     }
     /// remove data for key
-    public func removeObjectCache(_ cacheKey: String, completion: @escaping (Bool)->()) {
+    public func removeObjectCache(_ cacheKey: String, completion: @escaping (Bool) -> Void) {
         storage?.async.removeObject(forKey: cacheKey, completion: { result in
             DispatchQueue.main.async {
                 switch result {
@@ -57,7 +57,7 @@ public class CacheTool<T: Codable>: NSObject {
     public func object(forKey key: String, completion: @escaping (Cache.Result<T>) -> Void) {
         storage?.async.object(forKey: key, completion: completion)
     }
-    
+
     /// get data
     public func objectSync(forKey key: String) -> T? {
         do {
@@ -71,8 +71,5 @@ public class CacheTool<T: Codable>: NSObject {
         storage?.async.setObject(object, forKey: forKey, completion: {(_) in
         })
     }
- 
+
 }
-
-
-

@@ -25,17 +25,17 @@ protocol Refreshable {
 }
 
 extension Refreshable {
-    
+
     func refreshStatusBind(to scrollView: UIScrollView, _ header: (() -> Void)? = nil, _ footer: (() -> Void)? = nil) -> Disposable {
-        
+
         if header != nil {
             scrollView.mj_header = MJRefreshNormalHeader(refreshingBlock: header)
         }
-        
+
         if footer != nil {
             scrollView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: footer)
         }
-        
+
         return refreshStatus.subscribe(onNext: { (status) in
             switch status {
             case .beingHeaderRefresh:

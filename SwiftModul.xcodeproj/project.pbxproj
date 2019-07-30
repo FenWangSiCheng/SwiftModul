@@ -11,7 +11,6 @@
 		15254C1E225B422200D18909 /* EmptyDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15254C1D225B422200D18909 /* EmptyDataView.xib */; };
 		1552ADE022F0144E00A09A30 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552ADDF22F0144E00A09A30 /* SoundViewController.swift */; };
 		1552ADE422F014AB00A09A30 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552ADE322F014AB00A09A30 /* MeViewController.swift */; };
-		15983E872237480900D9820C /* FindReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15983E862237480900D9820C /* FindReactor.swift */; };
 		15EAA74C22378A04009A85AC /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EAA74B22378A04009A85AC /* UserDefaultsExtensions.swift */; };
 		43BEB21B22524B9E005B75E4 /* DoubleExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEB21A22524B9E005B75E4 /* DoubleExtentions.swift */; };
 		4F07AB5721084EBC00EA79C3 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07AB5621084EBC00EA79C3 /* Const.swift */; };
@@ -62,7 +61,6 @@
 		15254C1D225B422200D18909 /* EmptyDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDataView.xib; sourceTree = "<group>"; };
 		1552ADDF22F0144E00A09A30 /* SoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
 		1552ADE322F014AB00A09A30 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
-		15983E862237480900D9820C /* FindReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindReactor.swift; sourceTree = "<group>"; };
 		15EAA74B22378A04009A85AC /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		21A68DC36BF57F4C6AD1A57C /* Pods_SwiftModulTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftModulTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BEB1BC224BC1C8005B75E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 		15983E85223747E000D9820C /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
-				15983E862237480900D9820C /* FindReactor.swift */,
 			);
 			path = Reactor;
 			sourceTree = "<group>";
@@ -430,6 +427,7 @@
 				4F5DB8D720ABC91300999961 /* Frameworks */,
 				4F5DB8D820ABC91300999961 /* Resources */,
 				5B5F0CF6574BA1947C11BCCF /* [CP] Embed Pods Frameworks */,
+				1552ADE522F02DB700A09A30 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -493,6 +491,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1552ADE522F02DB700A09A30 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		5B5F0CF6574BA1947C11BCCF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -541,7 +556,6 @@
 				4FFC927321096BF500F16BBE /* UIImageViewExtensions.swift in Sources */,
 				4F5DB8DE20ABC91300999961 /* AppDelegate.swift in Sources */,
 				4F222C21215094A5008DFD5A /* SingleNetworkExtention.swift in Sources */,
-				15983E872237480900D9820C /* FindReactor.swift in Sources */,
 				4FFC928B2109731600F16BBE /* StringExtensions.swift in Sources */,
 				4F679F60213FDBE50019B847 /* ArrayExtensions.swift in Sources */,
 				4F222C2D215094CE008DFD5A /* CommonTools.swift in Sources */,

@@ -21,7 +21,7 @@ public enum NetworkTarget {
 }
 
 extension NetworkTarget: TargetType {
-    
+
     public var baseURL: URL {
         switch self {
         case .getTestList:
@@ -29,9 +29,9 @@ extension NetworkTarget: TargetType {
         case .getSkyData:
             return SkyAPI.authenticatedURL
         }
-        
+
     }
-    
+
     public var path: String {
         switch self {
         case .getTestList:
@@ -40,7 +40,7 @@ extension NetworkTarget: TargetType {
             return "\(latitude),\(longitue)"
         }
     }
-    
+
     public var method: Moya.Method {
         switch self {
         case .getTestList:
@@ -49,7 +49,7 @@ extension NetworkTarget: TargetType {
             return .get
         }
     }
-    
+
     public var sampleData: Data {
         switch self {
         case .getTestList:
@@ -81,9 +81,9 @@ extension NetworkTarget: TargetType {
             """.data(using: .utf8)!
             return data
         }
-        
+
     }
-    
+
     public  var task: Task {
         switch self {
         case .getTestList:
@@ -92,8 +92,8 @@ extension NetworkTarget: TargetType {
             return .requestPlain
         }
     }
-    
-    public var headers: [String : String]? {
+
+    public var headers: [String: String]? {
          return nil
     }
 

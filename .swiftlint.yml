@@ -1,0 +1,17 @@
+excluded:
+  - Pods
+  - Carthage
+disabled_rules:
+  - line_length
+identifier_name:
+  min_length: # only min_length
+    warning: 1
+    error: 1
+  max_length:
+    warning: 60
+    error: 80
+force_cast: warning
+
+cyclomatic_complexity:
+  warning: 50
+  error: 100

@@ -13,14 +13,11 @@ import RxSwift
 class EmptyDataView: UIView, NibLoadView {
 
     private var retryClickSubject: PublishSubject<Void> = PublishSubject<Void>()
-    
+
     var retryClickOb: Observable<Void> {
-        get {
-           return retryClickSubject.asObserver()
-        }
+        return retryClickSubject.asObserver()
     }
-    
+
     @IBOutlet weak var retryButton: UIButton!
-    
 
 }

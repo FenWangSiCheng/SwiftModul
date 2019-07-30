@@ -14,46 +14,25 @@ import EmptyDataSet_Swift
 import ReactorKit
 import CoreLocation
 
-class FindViewController: BaseViewController, Refreshable, StoryboardView,  UIScrollViewDelegate {
-    
+class FindViewController: BaseViewController, Refreshable, UIScrollViewDelegate {
+
     @IBOutlet weak var tableView: UITableView!
-    
+
     let refreshStatus = BehaviorSubject(value: RefreshStatus.none)
-    
-    var dataSource : RxTableViewSectionedReloadDataSource<TestSectionModel>?
-    
-    typealias Reactor = FindReactor
-    
+
+    var dataSource: RxTableViewSectionedReloadDataSource<TestSectionModel>?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
-        
-    }
-    
-    func bind(reactor: FindReactor) {
-        
-       
-    }
-    
-    private func setUI() {
-
-        
-    }
-    
-    private func getNetData() {
-        
 
     }
-    
+
 }
 
 extension FindViewController: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+
         return 150
     }
 }
-
-

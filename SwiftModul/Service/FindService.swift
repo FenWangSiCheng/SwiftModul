@@ -10,21 +10,21 @@ import Foundation
 import RxSwift
 
 protocol FindServiceType {
-    
+
     func getTestModel() -> Single<TestModelArrayModel>
 }
 
 class FindService: FindServiceType {
-    
-    let networking :Network!
-    
+
+    let networking: Network!
+
     init(networking: Network) {
         self.networking = networking
     }
-    
+
     func getTestModel() -> PrimitiveSequence<SingleTrait, TestModelArrayModel> {
-        
+
         return networking.request(target: .getTestList).showStatus().cacheData(target: .getTestList).mapObject(type: TestModelArrayModel.self)
-        
+
     }
 }

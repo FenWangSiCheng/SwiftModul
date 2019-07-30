@@ -9,20 +9,20 @@
 import UIKit
 
 extension UIViewController {
-    
-    var isModal : Bool{
+
+    var isModal: Bool {
         if let navi = navigationController {
             return navi.viewControllers.count == 1
         }
         return parent == nil
     }
-    
-    func dissmissOrPopViewController(){
-        if isModal{
+
+    func dissmissOrPopViewController() {
+        if isModal {
             navigationController != nil ? navigationController?.dismiss(animated: true, completion: nil) : dismiss(animated: true, completion: nil)
             return
         }
         navigationController?.popViewController(animated: true)
     }
-    
+
 }

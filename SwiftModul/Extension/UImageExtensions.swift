@@ -17,16 +17,15 @@ extension UIImage {
     public class func originImageWithName(name: String) -> UIImage? {
         return UIImage(named: name)?.withRenderingMode(.alwaysOriginal)
     }
-    
-    
+
     /// 绘制园图
     ///
     /// - Returns: 图片
     public func circleImage() -> UIImage? {
-        
+
         let size = self.size
         let drawWH = size.width < size.height ? size.width : size.height
-        
+
         UIGraphicsBeginImageContext(CGSize(width: drawWH, height: drawWH))
         let context = UIGraphicsGetCurrentContext()
         let clipRect = CGRect(x: 0, y: 0, width: drawWH, height: drawWH)
@@ -36,9 +35,9 @@ extension UIImage {
         let resultImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return resultImage
-        
+
     }
-    
+
     class func weatherIcon(of name: String) -> UIImage? {
         switch name {
         case "clear-day":

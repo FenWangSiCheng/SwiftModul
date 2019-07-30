@@ -11,25 +11,33 @@ import UIKit
 class CommonTools: NSObject {
 
     public static let shareInstance: CommonTools = CommonTools()
-    
+
     public func getWidth(text: String, height: CGFloat, font: CGFloat) ->
         CGFloat {
-            
+
         let text = text as NSString
-        let rect = text.boundingRect(with: CGSize(width: CGFloat(Int.max), height: height), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: font)], context: nil)
+        let size = CGSize(width: CGFloat(Int.max), height: height)
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: font)]
+        let options = NSStringDrawingOptions.usesLineFragmentOrigin
+        let rect = text.boundingRect(with: size, options: options, attributes: attributes, context: nil)
         return rect.size.width
     }
-    
+
     public func getHeight(text: String, width: CGFloat, font: CGFloat) -> CGFloat {
         let text = text as NSString
-        let rect = text.boundingRect(with: CGSize(width: width, height: CGFloat(Int.max)), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: font)], context: nil)
+        let size = CGSize(width: width, height: CGFloat(Int.max))
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: font)]
+        let options = NSStringDrawingOptions.usesLineFragmentOrigin
+        let rect = text.boundingRect(with: size, options: options, attributes: attributes, context: nil)
         return rect.size.height
     }
-    
+
     public func addlineToLabelText(text: String) -> NSMutableAttributedString {
-        
+
         let originalPricestr = NSMutableAttributedString(string: text)
-        originalPricestr.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSNumber(value: 1), range: NSRange(location: 0, length: originalPricestr.length))
+        let attribute = NSAttributedString.Key.strikethroughStyle
+        let range = NSRange(location: 0, length: originalPricestr.length)
+        originalPricestr.addAttribute(attribute, value: NSNumber(value: 1), range: range)
         return originalPricestr
     }
 

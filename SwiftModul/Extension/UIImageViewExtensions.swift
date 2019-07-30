@@ -16,17 +16,17 @@ extension UIImageView {
     /// - Parameters:
     ///   - URLString: 网络图片url
     ///   - placeHolderName: 占位图片名
-    public func setImage(_ URLString : String?, _ placeHolderName : String?) {
+    public func setImage(_ URLString: String?, _ placeHolderName: String?) {
         guard let URLString = URLString else {
             return
         }
-        
+
         guard let placeHolderName = placeHolderName else {
             return
         }
-        
+
         guard let url = URL(string: URLString) else { return }
-        kf.setImage(with: url, placeholder : UIImage(named: placeHolderName))
+        kf.setImage(with: url, placeholder: UIImage(named: placeHolderName))
     }
-    
+
 }

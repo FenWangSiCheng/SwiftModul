@@ -13,18 +13,18 @@ import ObjectMapper
 
 typealias SingleActionHandler = () -> Void
 
-extension PrimitiveSequence where Trait == SingleTrait, Element == Response  {
-    
+extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
+
     public func sendOnly() -> Single<Bool> {
-        return self.mapJSON().flatMap{ (response) -> Single<Bool> in
+        return self.mapJSON().flatMap { (_) -> Single<Bool> in
             return Single.just(true)
         }
     }
-    
+
     public func mapObject<T: Mappable>(type: T.Type) -> Single<T> {
-        
+
         return self.mapJSON().flatMap { response -> Single<T> in
-            guard let json = response as? [String : Any] else {
+            guard let json = response as? [String: Any] else {
                 return Single.error(NetworkError.incorrectDataReturned)
             }
             guard let object = Mapper<T>().map(JSONObject: json) else {
@@ -34,11 +34,11 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Response  {
         }
 
     }
-    
-    public func mapObjects<T: Mappable>(type: T.Type) -> Single<[T]>  {
-        
+
+    public func mapObjects<T: Mappable>(type: T.Type) -> Single<[T]> {
+
         return self.mapJSON().flatMap { response -> Single<[T]> in
-            guard let json = response as? [String : Any] else {
+            guard let json = response as? [String: Any] else {
                 return Single.error(NetworkError.incorrectDataReturned)
             }
             guard let data = json["message"] else {
@@ -50,26 +50,25 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Response  {
             return Single.just(object)
         }
     }
-    
+
     public func filterStatusCode() -> Single<Element> {
         return flatMap({ (response) -> Single<Element> in
             return Single.just(try response.filterStatusCode())
         })
     }
-    
+
     public func cacheData(target: NetworkTarget) -> Single<Element> {
-        
+
         return self.flatMap { (respose) -> Single<Element> in
                 CacheToolFactory.dataCacheTool.setObject(respose.data, forKey: target.baseURL.absoluteString + target.path)
                 return self
-            }.catchError{error in
+            }.catchError {error in
                 let data = CacheToolFactory.dataCacheTool.objectSync(forKey: target.baseURL.absoluteString + target.path)
                 if data == nil {
                     return Single.error(error)
-                }else {
+                } else {
                     return Single.just(Response(statusCode: 200, data: data!))
                 }
         }
     }
 }
-

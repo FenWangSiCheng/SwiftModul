@@ -9,7 +9,7 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,31 +19,31 @@ class BaseNavigationController: UINavigationController {
         gester?.delaysTouchesBegan = true
         panGester.delegate = self
     }
-    
+
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        
+
         if self.children.count > 0 {
             viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: ""), style: .plain, target: self, action: #selector(back))
             viewController.hidesBottomBarWhenPushed = true
         }
         super.pushViewController(viewController, animated: true)
-        
+
     }
-    
+
     @objc private func back() {
         self.popViewController(animated: true)
     }
 
 }
 
-extension BaseNavigationController : UIGestureRecognizerDelegate {
-    
+extension BaseNavigationController: UIGestureRecognizerDelegate {
+
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        
+
         if self.children.count == 1 {
             return false
         }
         return true
     }
-    
+
 }

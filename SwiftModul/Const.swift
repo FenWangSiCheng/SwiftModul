@@ -9,30 +9,29 @@
 import UIKit
 
 func printLog<T>(_ message: T,
-                    file: String = #file,
-                    method: String = #function,
-                    line: Int = #line)
-{
+                 file: String = #file,
+                 method: String = #function,
+                 line: Int = #line) {
     #if DEBUG
     print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
     #endif
 }
 
 struct PreferenceNames {
-    
+
     static let maxCacheSize = PreferenceName<String>(rawValue: "MaxCacheSize")!
     static let isMan = PreferenceName<Bool>(rawValue: "IsMan")!
 }
 
 struct AssetsImageNames {
-    
+
     static let placeHodelName = "tabbar_download_h"
 }
 
 public enum DateMode: Int {
     case text
     case digit
-    
+
     var format: String {
         return self == .text ? "E, dd MMMM" : "EEEEE, MM/dd"
     }
@@ -48,6 +47,3 @@ public struct UserDefaultsKeys {
     static let temperatureMode = PreferenceName<Int>(rawValue: "temperatureMode")!
     static let locations = PreferenceName<Int>(rawValue: "locations")!
 }
-
-
-

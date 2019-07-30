@@ -18,7 +18,7 @@ extension UIApplication {
         }
         let presentedVC = rootViewController.presentedViewController
         if presentedVC != nil {
-            
+
             return topViewController(rootViewController: presentedVC!)
         }
         return rootViewController
