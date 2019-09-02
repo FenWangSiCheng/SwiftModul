@@ -9,18 +9,18 @@
 import UIKit
 
 protocol NibLoadView {
-
+    
 }
 
 extension NibLoadView where Self: UIView {
-
+    
     static var nib: UINib {
         return UINib(nibName: self.className, bundle: Bundle(for: self))
     }
 }
 
 extension NibLoadView where Self: NSObject {
-
+    
     /// loadViewFromXibName
     ///
     /// - Parameter nibname: xibName

@@ -31,47 +31,47 @@ enum HUDStatus: Equatable {
 }
 
 struct HUD {
-
+    
     public static let shared = HUD()
-
+    
     private init() {
         setupHUD()
     }
-
+    
     private func setupHUD() {
         SVProgressHUD.setDefaultStyle(.light)
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.setMinimumDismissTimeInterval(2)
     }
-
+    
     public func showSuccess(string: String?, delay: Double = 2) {
         SVProgressHUD.setMinimumDismissTimeInterval(delay)
         SVProgressHUD.showSuccess(withStatus: string)
     }
-
+    
     public func showError(string: String?, delay: Double = 2) {
         SVProgressHUD.setMinimumDismissTimeInterval(delay)
         SVProgressHUD.showError(withStatus: string)
     }
-
+    
     public func showTitle(string: String?, delay: Double = 2) {
         SVProgressHUD.setMinimumDismissTimeInterval(delay)
         SVProgressHUD.showError(withStatus: string)
     }
-
+    
     public func showStatus(string: String? = nil) {
         SVProgressHUD.show(withStatus: string)
     }
-
+    
     public func dismiss(delay: Double = 0.0) {
         SVProgressHUD.dismiss(withDelay: delay)
     }
-
+    
 }
 
 extension HUD: ObserverType {
-
-   public func on(_ event: Event<HUDStatus>) {
+    
+    public func on(_ event: Event<HUDStatus>) {
         switch event {
         case .next(let element):
             switch element {
@@ -99,7 +99,7 @@ extension Observable {
 }
 
 extension PrimitiveSequence where Trait == SingleTrait {
-
+    
     public func showStatus() -> Single<Element> {
         return self.do(onSuccess: { (_) in
             HUD.shared.dismiss()

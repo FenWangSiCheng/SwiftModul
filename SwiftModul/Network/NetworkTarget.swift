@@ -10,29 +10,29 @@ import UIKit
 import Moya
 
 public enum NetworkTarget {
-     case getAllProducts(page: Int)
+    case getAllProducts(page: Int)
 }
 
 extension NetworkTarget: TargetType {
-
+    
     public var baseURL: URL {
         return URL.init(string: APIConst.basePath)!
     }
-
+    
     public var path: String {
         switch self {
         case .getAllProducts:
             return APIConst.getAllProducts
         }
     }
-
+    
     public var method: Moya.Method {
         switch self {
         case .getAllProducts:
             return .get
         }
     }
-
+    
     public var sampleData: Data {
         switch self {
         case .getAllProducts:
@@ -40,7 +40,7 @@ extension NetworkTarget: TargetType {
             return data
         }
     }
-
+    
     public  var task: Task {
         switch self {
         case let .getAllProducts(page):
@@ -48,9 +48,9 @@ extension NetworkTarget: TargetType {
                                       encoding: URLEncoding.default)
         }
     }
-
+    
     public var headers: [String: String]? {
-         return nil
+        return nil
     }
-
+    
 }

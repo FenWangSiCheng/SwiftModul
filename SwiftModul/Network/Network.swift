@@ -11,9 +11,9 @@ import Moya
 import RxSwift
 
 public class Network {
-
+    
     private var provider: MoyaProvider<NetworkTarget>!
-
+    
     public static let instance = Network(provider: MoyaProvider<NetworkTarget>(stubClosure: MoyaProvider.immediatelyStub, plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: { (data) -> (Data) in
         do {
             let dataAsJSON = try JSONSerialization.jsonObject(with: data)
@@ -23,11 +23,11 @@ public class Network {
             return data
         }
     })]))
-
+    
     init(provider: MoyaProvider<NetworkTarget>) {
         self.provider = provider
     }
-
+    
     public func request(target: NetworkTarget) -> Single<Response> {
         return provider.rx
             .request(target)
@@ -36,7 +36,7 @@ public class Network {
 }
 
 extension Network {
-
+    
     func getAllProducts(page: Int) -> Single<[ProductInfoModel]> {
         return request(target: .getAllProducts(page: page))
             .mapObjects(type: ProductInfoModel.self)

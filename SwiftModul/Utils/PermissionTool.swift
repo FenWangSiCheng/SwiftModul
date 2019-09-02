@@ -15,10 +15,11 @@ class PermissionTool: NSObject {
 
     public func requestCameraPermission(success:@escaping () -> Void, failure:@escaping () -> Void) {
         let authStatus = AVCaptureDevice.authorizationStatus(for: .video)
-        if authStatus == .restricted || authStatus == .denied {
-            failure()
-        } else {
+        switch authStatus {
+        case .authorized:
             success()
+        default:
+            failure()
         }
     }
 }

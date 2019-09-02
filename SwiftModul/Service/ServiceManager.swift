@@ -12,14 +12,14 @@ import Moya
 let serviceManager = ServiceManager.shared
 
 class ServiceManager {
-
+    
     internal let networking: Network
     internal init(networking: Network) {
         self.networking = networking
     }
-
+    
     static let shared = ServiceManager(networking: Network.instance)
-
+    
     lazy var findService: FindService = FindService(networking: networking)
-
+    
 }

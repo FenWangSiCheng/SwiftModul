@@ -16,7 +16,7 @@ struct CacheToolFactory {
 public class CacheTool<T: Codable>: NSObject {
 
     public func getShareInstance<T>() -> CacheTool<T> {
-       return CacheTool<T>()
+        return CacheTool<T>()
     }
 
     private var storage: Storage<T>?

@@ -28,7 +28,7 @@ struct ProductInfoModel: Equatable, Mappable {
     public var note: String?
     /** 分类 */
     public var category: String?
-
+    
     static func == (lhs: ProductInfoModel, rhs: ProductInfoModel) -> Bool {
         return lhs.name == rhs.name
             && lhs.imageUrl == rhs.imageUrl
@@ -39,9 +39,9 @@ struct ProductInfoModel: Equatable, Mappable {
             && lhs.note == rhs.note
             && lhs.category == rhs.category
     }
-
+    
     init?(map: Map) {}
-
+    
     mutating func mapping(map: Map) {
         name <- map["name"]
         imageUrl <- map["image_url"]
@@ -56,14 +56,14 @@ struct ProductInfoModel: Equatable, Mappable {
 
 //UI data
 struct ProductInfoModelUI: Equatable {
-
+    
     var name: String?
     var imageUrl: String?
     var info: String?
     var salePrice: String?
     var repertory: String?
     var originalPrice: NSAttributedString?
-
+    
     static func == (lhs: ProductInfoModelUI, rhs: ProductInfoModelUI) -> Bool {
         return lhs.name == rhs.name
             && lhs.imageUrl == rhs.imageUrl
@@ -80,14 +80,14 @@ extension ProductInfoModelUI: ProductInfoProtocal {}
 struct ProductInfoSectionModel: Equatable {
     var data: [ProductInfoModelUI]
     var header: String
-
+    
     static func == (lhs: ProductInfoSectionModel, rhs: ProductInfoSectionModel) -> Bool {
         return lhs.data == rhs.data && lhs.header == rhs.header
     }
 }
 
 extension ProductInfoSectionModel: SectionModelType {
-
+    
     typealias Item = ProductInfoModelUI
     var items: [ProductInfoModelUI] {
         return data
@@ -100,12 +100,12 @@ extension ProductInfoSectionModel: SectionModelType {
 
 //modelProtocal
 protocol ProductInfoProtocal {
-
+    
     var name: String? { get }
     var imageUrl: String? { get }
     var info: String? { get }
     var salePrice: String? { get }
     var originalPrice: NSAttributedString? { get }
     var repertory: String? { get }
-
+    
 }

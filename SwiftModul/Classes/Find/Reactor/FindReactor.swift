@@ -12,29 +12,29 @@ import RxCocoa
 import RxSwift
 
 final class FindReactor: Reactor {
-
+    
     var page: Int = 1
-
+    
     enum Action {
         case downRefresh(searchName: String?)
     }
-
+    
     enum Mutation {
         case setAllItemsInfo([ProductInfoSectionModel])
     }
-
+    
     struct State {
         var allItemsInfo: [ProductInfoSectionModel]
     }
-
+    
     let initialState: State
-
+    
     init() {
         self.initialState = State(
             allItemsInfo: []
         )
     }
-
+    
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .downRefresh(searchName: _):
@@ -44,7 +44,7 @@ final class FindReactor: Reactor {
                 .map { self.transformUIData(allItemsInfos: $0) }
         }
     }
-
+    
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
@@ -56,7 +56,7 @@ final class FindReactor: Reactor {
 }
 
 extension FindReactor {
-
+    
     fileprivate func transformUIData(allItemsInfos: [ProductInfoModel]) -> Mutation {
         let data =  allItemsInfos.map { (allItemsInfo) -> ProductInfoModelUI in
             var item = ProductInfoModelUI()

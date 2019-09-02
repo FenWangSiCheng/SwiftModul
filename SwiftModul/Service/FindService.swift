@@ -10,13 +10,13 @@ import Foundation
 import RxSwift
 
 class FindService {
-
+    
     let networking: Network!
-
+    
     init(networking: Network) {
         self.networking = networking
     }
-
+    
     public func getAllProducts(page: Int) -> Single<[ProductInfoModel]> {
         return networking.getAllProducts(page: page)
     }

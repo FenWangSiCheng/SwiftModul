@@ -204,6 +204,7 @@
 				4FCA670D20BD099100E59545 /* Find.storyboard */,
 				4FCA670F20BD09A500E59545 /* Sound.storyboard */,
 				4FCA671320BD09BA00E59545 /* Me.storyboard */,
+				4FBC859D21ACEFA00087D3B2 /* FPWebViewController.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -268,7 +269,6 @@
 		4F3BEE8D20F4AC8400443FE3 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				4FBC859D21ACEFA00087D3B2 /* FPWebViewController.storyboard */,
 				4FBC859E21ACEFA00087D3B2 /* FPWebViewController.swift */,
 				4F3BEE8E20F4ACD900443FE3 /* SCCountdownButton.swift */,
 			);

@@ -10,7 +10,7 @@ import UIKit
 import Moya
 
 extension Response {
-   public func filterStatusCode() throws -> Response {
+    public func filterStatusCode() throws -> Response {
         switch statusCode {
         case 200...299:
             return self

@@ -72,7 +72,7 @@ class SCCountdownButton: UIButton {
         timer = nil
         updateNormal()
     }
-
+    
     private func updateNormal() {
         isEnabled = true
         timeLabel.textColor = normalTextColor

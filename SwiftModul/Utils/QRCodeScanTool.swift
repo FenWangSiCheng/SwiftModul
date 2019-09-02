@@ -12,30 +12,30 @@ import AVFoundation
 typealias ResultBlock = ([String]?) -> Void
 
 class QRCodeScanTool: NSObject {
-
+    
     public static let shareInstance: QRCodeScanTool = QRCodeScanTool()
-
+    
     private lazy var input: AVCaptureDeviceInput? = {
         let device = AVCaptureDevice.default(for: .video)
         return try? AVCaptureDeviceInput(device: device!)
     }()
-
+    
     private lazy var output: AVCaptureMetadataOutput? = {
         let output = AVCaptureMetadataOutput()
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         return output
     }()
-
+    
     private lazy var session: AVCaptureSession? = {
         return AVCaptureSession()
     }()
-
+    
     private var prelayer: AVCaptureVideoPreviewLayer?
     private var resultBlock: ResultBlock?
-
+    
     // begin scan
     public func beginScanInView(view: UIView, result:@escaping ([String]?) -> Void) {
-
+        
         resultBlock = result
         prelayer =  AVCaptureVideoPreviewLayer(session: self.session!)
         guard self.session != nil || self.output != nil || self.input != nil else {
@@ -51,23 +51,23 @@ class QRCodeScanTool: NSObject {
             }
             return
         }
-
+        
         if !view.layer.sublayers!.contains(self.prelayer!) {
             self.prelayer?.frame = view.layer.frame
             view.layer.insertSublayer(self.prelayer!, at: 0)
         }
         self.session!.startRunning()
     }
-
+    
     // stop scan
     public func stopScan() {
-
+        
         guard self.session != nil else {
             return
         }
         self.session!.stopRunning()
     }
-
+    
     // set insteret rect
     public func setInsteretRect(originRect: CGRect) {
         guard self.output != nil else {
@@ -80,7 +80,7 @@ class QRCodeScanTool: NSObject {
         let height = originRect.size.height / screenBounds.size.height
         self.output!.rectOfInterest = CGRect(x: y, y: x, width: width, height: height)
     }
-
+    
     // remove device
     public func removeAllDevice() {
         guard self.session != nil || self.output != nil || self.input != nil else {
@@ -93,7 +93,7 @@ class QRCodeScanTool: NSObject {
 
 // MARK: AVCaptureMetadataOutputObjectsDelegate
 extension QRCodeScanTool: AVCaptureMetadataOutputObjectsDelegate {
-
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         var resultStrs = [String]()
         metadataObjects.forEach { (obj) in
@@ -105,5 +105,5 @@ extension QRCodeScanTool: AVCaptureMetadataOutputObjectsDelegate {
             self.resultBlock!(resultStrs)
         }
     }
-
+    
 }
