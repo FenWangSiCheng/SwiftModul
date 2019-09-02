@@ -14,25 +14,69 @@ import EmptyDataSet_Swift
 import ReactorKit
 import CoreLocation
 
-class FindViewController: BaseViewController, Refreshable, UIScrollViewDelegate {
+class FindViewController: BaseViewController, StoryboardView, Refreshable {
+
+    typealias Reactor = FindReactor
 
     @IBOutlet weak var tableView: UITableView!
 
     let refreshStatus = BehaviorSubject(value: RefreshStatus.none)
 
-    var dataSource: RxTableViewSectionedReloadDataSource<TestSectionModel>?
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setReactor()
+        setUI()
+        getNetData()
+    }
+
+    func bind(reactor: FindReactor) {
+
+        reactor.state.map { $0.allItemsInfo }
+            .distinctUntilChanged()
+            .bind(to: tableView.rx.items(dataSource: dataSource()))
+            .disposed(by: disposeBag)
     }
 
 }
 
-extension FindViewController: UITableViewDelegate {
+extension FindViewController {
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    fileprivate func setUI() {
 
-        return 150
+        setTableView()
+    }
+
+    fileprivate func setReactor() {
+
+        reactor = FindReactor()
+    }
+
+    fileprivate func getNetData() {
+
+        reactor?.action.onNext(.downRefresh(searchName: ""))
+    }
+
+    private func setTableView() {
+
+        if #available(iOS 11.0, *) {
+            tableView.estimatedRowHeight = 0.01
+            tableView.estimatedSectionHeaderHeight = 0.01
+            tableView.estimatedSectionFooterHeight = 0.01
+            tableView.contentInsetAdjustmentBehavior = .never
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
+
+        tableView.rowHeight = 150
+    }
+
+    private func dataSource() -> RxTableViewSectionedReloadDataSource<ProductInfoSectionModel> {
+        let dataSource = RxTableViewSectionedReloadDataSource<ProductInfoSectionModel>(configureCell: { _, tableView, indexPath, model in
+            let cell = tableView.dequeueReusableCell(FindTableViewCell.self, for: indexPath)
+            cell.configureCell(data: model)
+            return cell
+        })
+        return dataSource
     }
 }

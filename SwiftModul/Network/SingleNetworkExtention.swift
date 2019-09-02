@@ -41,7 +41,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
             guard let json = response as? [String: Any] else {
                 return Single.error(NetworkError.incorrectDataReturned)
             }
-            guard let data = json["message"] else {
+            guard let data = json["data"] else {
                 return Single.error(NetworkError.incorrectDataReturned)
             }
             guard let object = Mapper<T>().mapArray(JSONObject: data) else {

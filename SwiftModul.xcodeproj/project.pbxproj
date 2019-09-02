@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150D284923190272001A4B12 /* FindReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D284823190272001A4B12 /* FindReactor.swift */; };
+		150D284B2319142F001A4B12 /* UITableVIewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D284A2319142F001A4B12 /* UITableVIewExtentions.swift */; };
 		15254C1C225B421200D18909 /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15254C1B225B421200D18909 /* EmptyDataView.swift */; };
 		15254C1E225B422200D18909 /* EmptyDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15254C1D225B422200D18909 /* EmptyDataView.xib */; };
+		1537F2D3231CB49300A0D8F4 /* NSObjectExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537F2D2231CB49300A0D8F4 /* NSObjectExtention.swift */; };
 		1552ADE022F0144E00A09A30 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552ADDF22F0144E00A09A30 /* SoundViewController.swift */; };
 		1552ADE422F014AB00A09A30 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552ADE322F014AB00A09A30 /* MeViewController.swift */; };
+		15C345422317AB60009B2146 /* ProductInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C345412317AB60009B2146 /* ProductInfoModel.swift */; };
+		15C345462317CE84009B2146 /* AllProductInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C345442317CE84009B2146 /* AllProductInfo.json */; };
 		15EAA74C22378A04009A85AC /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EAA74B22378A04009A85AC /* UserDefaultsExtensions.swift */; };
 		43BEB21B22524B9E005B75E4 /* DoubleExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEB21A22524B9E005B75E4 /* DoubleExtentions.swift */; };
 		4F07AB5721084EBC00EA79C3 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07AB5621084EBC00EA79C3 /* Const.swift */; };
@@ -28,7 +33,6 @@
 		4F3BEE8C20F4908B00443FE3 /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BEE8B20F4908B00443FE3 /* Refreshable.swift */; };
 		4F3BEE8F20F4ACD900443FE3 /* SCCountdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BEE8E20F4ACD900443FE3 /* SCCountdownButton.swift */; };
 		4F3FBE3420BD337600554A72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3FBE3320BD337600554A72 /* Assets.xcassets */; };
-		4F421E7120ECA30700479EFF /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7020ECA30700479EFF /* TestModel.swift */; };
 		4F421E7820ECAFDB00479EFF /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7720ECAFDB00479EFF /* FindViewController.swift */; };
 		4F421E7A20ECAFFE00479EFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7920ECAFFE00479EFF /* BaseViewController.swift */; };
 		4F421E7D20ECB17800479EFF /* FindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7C20ECB17800479EFF /* FindService.swift */; };
@@ -57,10 +61,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		150D284823190272001A4B12 /* FindReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindReactor.swift; sourceTree = "<group>"; };
+		150D284A2319142F001A4B12 /* UITableVIewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableVIewExtentions.swift; sourceTree = "<group>"; };
 		15254C1B225B421200D18909 /* EmptyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
 		15254C1D225B422200D18909 /* EmptyDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDataView.xib; sourceTree = "<group>"; };
+		1537F2D2231CB49300A0D8F4 /* NSObjectExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtention.swift; sourceTree = "<group>"; };
 		1552ADDF22F0144E00A09A30 /* SoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
 		1552ADE322F014AB00A09A30 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		15C345412317AB60009B2146 /* ProductInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoModel.swift; sourceTree = "<group>"; };
+		15C345442317CE84009B2146 /* AllProductInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllProductInfo.json; sourceTree = "<group>"; };
 		15EAA74B22378A04009A85AC /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		21A68DC36BF57F4C6AD1A57C /* Pods_SwiftModulTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftModulTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BEB1BC224BC1C8005B75E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,7 +90,6 @@
 		4F3BEE8B20F4908B00443FE3 /* Refreshable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
 		4F3BEE8E20F4ACD900443FE3 /* SCCountdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCountdownButton.swift; sourceTree = "<group>"; };
 		4F3FBE3320BD337600554A72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F421E7020ECA30700479EFF /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		4F421E7720ECAFDB00479EFF /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		4F421E7920ECAFFE00479EFF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4F421E7C20ECB17800479EFF /* FindService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindService.swift; sourceTree = "<group>"; };
@@ -176,8 +184,17 @@
 		15983E85223747E000D9820C /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
+				150D284823190272001A4B12 /* FindReactor.swift */,
 			);
 			path = Reactor;
+			sourceTree = "<group>";
+		};
+		15C345432317CE84009B2146 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				15C345442317CE84009B2146 /* AllProductInfo.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		43BEB1A72243C8CF005B75E4 /* StoryBoard */ = {
@@ -310,7 +327,7 @@
 		4F421E6F20ECA2B100479EFF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4F421E7020ECA30700479EFF /* TestModel.swift */,
+				15C345412317AB60009B2146 /* ProductInfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,6 +372,7 @@
 		4F5DB8DC20ABC91300999961 /* SwiftModul */ = {
 			isa = PBXGroup;
 			children = (
+				15C345432317CE84009B2146 /* Resource */,
 				4F222C19215094A4008DFD5A /* Network */,
 				4F421E7B20ECB0C300479EFF /* Service */,
 				43BEB1A72243C8CF005B75E4 /* StoryBoard */,
@@ -387,6 +405,8 @@
 				4FFC927121096BF500F16BBE /* UIColorExtensions.swift */,
 				4FFC927221096BF500F16BBE /* UImageExtensions.swift */,
 				4FFC928A2109731600F16BBE /* StringExtensions.swift */,
+				150D284A2319142F001A4B12 /* UITableVIewExtentions.swift */,
+				1537F2D2231CB49300A0D8F4 /* NSObjectExtention.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -477,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15C345462317CE84009B2146 /* AllProductInfo.json in Resources */,
 				4FBC859F21ACEFA10087D3B2 /* FPWebViewController.storyboard in Resources */,
 				4FCA671020BD09A500E59545 /* Sound.storyboard in Resources */,
 				15254C1E225B422200D18909 /* EmptyDataView.xib in Resources */,
@@ -556,6 +577,8 @@
 				4FFC927321096BF500F16BBE /* UIImageViewExtensions.swift in Sources */,
 				4F5DB8DE20ABC91300999961 /* AppDelegate.swift in Sources */,
 				4F222C21215094A5008DFD5A /* SingleNetworkExtention.swift in Sources */,
+				150D284923190272001A4B12 /* FindReactor.swift in Sources */,
+				1537F2D3231CB49300A0D8F4 /* NSObjectExtention.swift in Sources */,
 				4FFC928B2109731600F16BBE /* StringExtensions.swift in Sources */,
 				4F679F60213FDBE50019B847 /* ArrayExtensions.swift in Sources */,
 				4F222C2D215094CE008DFD5A /* CommonTools.swift in Sources */,
@@ -573,14 +596,15 @@
 				4F679F58213FDBB40019B847 /* UIViewExtensions.swift in Sources */,
 				4F679F5C213FDBCD0019B847 /* UIStoryboardExtensions.swift in Sources */,
 				1552ADE022F0144E00A09A30 /* SoundViewController.swift in Sources */,
-				4F421E7120ECA30700479EFF /* TestModel.swift in Sources */,
 				4F222C20215094A5008DFD5A /* Network.swift in Sources */,
 				4FBC85A021ACEFA10087D3B2 /* FPWebViewController.swift in Sources */,
 				15254C1C225B421200D18909 /* EmptyDataView.swift in Sources */,
 				43BEB21B22524B9E005B75E4 /* DoubleExtentions.swift in Sources */,
 				4FCA670020BD07B500E59545 /* BaseTabarController.swift in Sources */,
 				4F222C2B215094CE008DFD5A /* HUD.swift in Sources */,
+				15C345422317AB60009B2146 /* ProductInfoModel.swift in Sources */,
 				4F222C1F215094A5008DFD5A /* ResponseExtension.swift in Sources */,
+				150D284B2319142F001A4B12 /* UITableVIewExtentions.swift in Sources */,
 				4F421E7D20ECB17800479EFF /* FindService.swift in Sources */,
 				4FFC927521096BF500F16BBE /* UImageExtensions.swift in Sources */,
 				4FFC928921096F4300F16BBE /* NibLoadView.swift in Sources */,
@@ -664,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -718,7 +742,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

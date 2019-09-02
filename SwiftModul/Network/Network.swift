@@ -14,7 +14,7 @@ public class Network {
 
     private var provider: MoyaProvider<NetworkTarget>!
 
-    public static let instance = Network(provider: MoyaProvider<NetworkTarget>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: { (data) -> (Data) in
+    public static let instance = Network(provider: MoyaProvider<NetworkTarget>(stubClosure: MoyaProvider.immediatelyStub, plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: { (data) -> (Data) in
         do {
             let dataAsJSON = try JSONSerialization.jsonObject(with: data)
             let prettyData = try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
@@ -32,5 +32,13 @@ public class Network {
         return provider.rx
             .request(target)
             .filterStatusCode()
+    }
+}
+
+extension Network {
+
+    func getAllProducts(page: Int) -> Single<[ProductInfoModel]> {
+        return request(target: .getAllProducts(page: page))
+            .mapObjects(type: ProductInfoModel.self)
     }
 }

@@ -41,4 +41,12 @@ class CommonTools: NSObject {
         return originalPricestr
     }
 
+    public func loadDataFromBundle(ofName name: String, ext: String) -> Data? {
+        let bundle = Bundle(for: type(of: self))
+        if let url = bundle.url(forResource: name, withExtension: ext) {
+            return try? Data(contentsOf: url)
+        }
+        return nil
+    }
+
 }

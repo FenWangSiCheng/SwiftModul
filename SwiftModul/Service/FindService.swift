@@ -9,12 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol FindServiceType {
-
-    func getTestModel() -> Single<TestModelArrayModel>
-}
-
-class FindService: FindServiceType {
+class FindService {
 
     let networking: Network!
 
@@ -22,9 +17,7 @@ class FindService: FindServiceType {
         self.networking = networking
     }
 
-    func getTestModel() -> PrimitiveSequence<SingleTrait, TestModelArrayModel> {
-
-        return networking.request(target: .getTestList).showStatus().cacheData(target: .getTestList).mapObject(type: TestModelArrayModel.self)
-
+    public func getAllProducts(page: Int) -> Single<[ProductInfoModel]> {
+        return networking.getAllProducts(page: page)
     }
 }

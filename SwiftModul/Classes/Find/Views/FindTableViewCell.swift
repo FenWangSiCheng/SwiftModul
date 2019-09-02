@@ -14,11 +14,9 @@ class FindTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
 
-    var model: TestModel? {
-        didSet {
-            self.headerImageView.setImage(model?.pic51, AssetsImageNames.placeHodelName)
-            self.nameLabel.text = model?.name
-        }
+    public func configureCell(data: ProductInfoProtocal) {
+        headerImageView.setImage(data.imageUrl, "")
+        nameLabel.text = data.name
     }
 
     override func awakeFromNib() {
