@@ -21,12 +21,12 @@ enum RefreshStatus {
 }
 
 protocol Refreshable {
-    var refreshStatus: BehaviorSubject<RefreshStatus> { get }
+    var refreshStatus: BehaviorRelay<RefreshStatus> { get }
 }
 
 extension Refreshable {
     
-    func refreshStatusBind(to scrollView: UIScrollView, _ header: (() -> Void)? = nil, _ footer: (() -> Void)? = nil) -> Disposable {
+    func refreshStatusBind(to scrollView: UIScrollView, headerClosure header: (() -> Void)? = nil, footerClosure footer: (() -> Void)? = nil) -> Disposable {
         
         if header != nil {
             scrollView.mj_header = MJRefreshNormalHeader(refreshingBlock: header)
@@ -45,6 +45,7 @@ extension Refreshable {
             case .beingFooterRefresh:
                 scrollView.mj_footer.beginRefreshing()
             case .endFooterRefresh:
+                scrollView.mj_footer.isHidden = false
                 scrollView.mj_footer.endRefreshing()
             case .noMoreData:
                 scrollView.mj_footer.endRefreshingWithNoMoreData()

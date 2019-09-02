@@ -16,16 +16,15 @@ import CoreLocation
 
 class FindViewController: BaseViewController, StoryboardView, Refreshable {
     
+    var refreshStatus: BehaviorRelay<RefreshStatus> = .init(value: .none)
+
     typealias Reactor = FindReactor
     
     @IBOutlet weak var tableView: UITableView!
-    
-    let refreshStatus = BehaviorSubject(value: RefreshStatus.none)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setReactor()
+
         setUI()
         getNetData()
     }
@@ -43,20 +42,17 @@ class FindViewController: BaseViewController, StoryboardView, Refreshable {
 extension FindViewController {
     
     fileprivate func setUI() {
-        
+
+        setReactor()
         setTableView()
+        setRefresh()
     }
-    
+
     fileprivate func setReactor() {
         
-        reactor = FindReactor()
+        reactor = FindReactor(refreshStatus: refreshStatus)
     }
-    
-    fileprivate func getNetData() {
-        
-        reactor?.action.onNext(.downRefresh(searchName: ""))
-    }
-    
+
     private func setTableView() {
         
         if #available(iOS 11.0, *) {
@@ -70,13 +66,36 @@ extension FindViewController {
         
         tableView.rowHeight = 150
     }
+
+    private func setRefresh() {
+
+        refreshStatusBind(to: tableView, headerClosure: { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            self.reactor?.action.onNext(.downRefresh(searchName: nil))
+        }, footerClosure: { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            self.reactor?.action.onNext(.upRefresh(searchName: nil))
+        }).disposed(by: disposeBag)
+    }
     
-    private func dataSource() -> RxTableViewSectionedReloadDataSource<ProductInfoSectionModel> {
+    fileprivate func dataSource() -> RxTableViewSectionedReloadDataSource<ProductInfoSectionModel> {
         let dataSource = RxTableViewSectionedReloadDataSource<ProductInfoSectionModel>(configureCell: { _, tableView, indexPath, model in
             let cell = tableView.dequeueReusableCell(FindTableViewCell.self, for: indexPath)
             cell.configureCell(data: model)
             return cell
         })
         return dataSource
+    }
+}
+
+extension FindViewController {
+
+    fileprivate func getNetData() {
+
+        tableView.mj_header.beginRefreshing()
     }
 }

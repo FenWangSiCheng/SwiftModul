@@ -3,6 +3,7 @@ excluded:
   - Carthage
 disabled_rules:
   - line_length
+  - trailing_whitespace
 identifier_name:
   min_length: # only min_length
     warning: 1
