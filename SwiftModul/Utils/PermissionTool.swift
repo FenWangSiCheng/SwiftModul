@@ -18,6 +18,8 @@ class PermissionTool: NSObject {
         switch authStatus {
         case .authorized:
             success()
+        case .notDetermined:
+            success()
         default:
             failure()
         }
