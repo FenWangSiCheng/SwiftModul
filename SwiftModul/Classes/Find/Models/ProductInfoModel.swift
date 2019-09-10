@@ -54,31 +54,48 @@ struct ProductInfoModel: Equatable, Mappable {
     }
 }
 
-//UI data
-struct ProductInfoModelUI: Equatable {
-    
-    var name: String?
-    var imageUrl: String?
-    var info: String?
-    var salePrice: String?
-    var repertory: String?
-    var originalPrice: NSAttributedString?
-    
-    static func == (lhs: ProductInfoModelUI, rhs: ProductInfoModelUI) -> Bool {
-        return lhs.name == rhs.name
-            && lhs.imageUrl == rhs.imageUrl
-            && lhs.info == rhs.info
-            && lhs.salePrice == rhs.salePrice
-            && lhs.repertory == rhs.repertory
-            && lhs.originalPrice == rhs.originalPrice
+extension ProductInfoModel: ProductInfoProtocal{
+    var goodName: String? {
+        get {
+            return self.name
+        }
+    }
+
+    var goodImageUrl: String? {
+        get {
+            return self.imageUrl
+        }
+    }
+
+    var goodInfo: String? {
+        get {
+            return self.note
+        }
+    }
+
+    var goodSalePrice: String? {
+        get {
+            return "售价:\(self.salePrice ?? 0)"
+        }
+    }
+
+    var goodOriginalPrice: NSAttributedString? {
+        get {
+            return CommonTools.shareInstance.addlineToLabelText(text: "原价:\(self.costPrice ?? 0)")
+        }
+    }
+
+    var goodRepertory: String? {
+        get {
+            return "库存:\(self.count ?? 0)"
+        }
     }
 }
 
-extension ProductInfoModelUI: ProductInfoProtocal {}
 
 //DataSourceSectionModel
 struct ProductInfoSectionModel: Equatable {
-    var data: [ProductInfoModelUI]
+    var data: [ProductInfoModel]
     var header: String
     
     static func == (lhs: ProductInfoSectionModel, rhs: ProductInfoSectionModel) -> Bool {
@@ -88,11 +105,11 @@ struct ProductInfoSectionModel: Equatable {
 
 extension ProductInfoSectionModel: SectionModelType {
     
-    typealias Item = ProductInfoModelUI
-    var items: [ProductInfoModelUI] {
+    typealias Item = ProductInfoModel
+    var items: [ProductInfoModel] {
         return data
     }
-    init(original: ProductInfoSectionModel, items: [ProductInfoModelUI]) {
+    init(original: ProductInfoSectionModel, items: [ProductInfoModel]) {
         self = original
         data = items
     }
@@ -101,11 +118,11 @@ extension ProductInfoSectionModel: SectionModelType {
 //modelProtocal
 protocol ProductInfoProtocal {
     
-    var name: String? { get }
-    var imageUrl: String? { get }
-    var info: String? { get }
-    var salePrice: String? { get }
-    var originalPrice: NSAttributedString? { get }
-    var repertory: String? { get }
+    var goodName: String? { get }
+    var goodImageUrl: String? { get }
+    var goodInfo: String? { get }
+    var goodSalePrice: String? { get }
+    var goodOriginalPrice: NSAttributedString? { get }
+    var goodRepertory: String? { get }
     
 }

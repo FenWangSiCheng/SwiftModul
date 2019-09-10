@@ -23,8 +23,8 @@ final class FindReactor: Reactor {
     }
     
     enum Mutation {
-        case setAllItemsInfo([ProductInfoSectionModel])
-        case appendItemsInfo([ProductInfoSectionModel])
+        case setAllItemsInfo([ProductInfoModel])
+        case appendItemsInfo([ProductInfoModel])
     }
     
     struct State {
@@ -57,7 +57,7 @@ final class FindReactor: Reactor {
                     if result.count >= productInfolimitCount {
                         self.currentState.refreshStatus.accept(.endFooterRefresh)
                     }
-                    return self.transformUIData(allItemsInfos: result)
+                    return Mutation.setAllItemsInfo(result)
                 }
                 .catchError({[unowned self] (_) -> Observable<FindReactor.Mutation> in
                     self.currentState.refreshStatus.accept(.endHeaderRefresh)
@@ -74,7 +74,7 @@ final class FindReactor: Reactor {
                 .asObservable()
                 .map { [unowned self] (result) in
                     result.count < productInfolimitCount ? self.currentState.refreshStatus.accept(.noMoreData): self.currentState.refreshStatus.accept(.endFooterRefresh)
-                    return self.transformUIData(allItemsInfos: result, isUpRefresh: true)
+                    return Mutation.appendItemsInfo(result)
                 }
                 .catchError({ [unowned self]  (_) -> Observable<FindReactor.Mutation> in
                     self.currentState.refreshStatus.accept(.endFooterRefresh)
@@ -87,28 +87,11 @@ final class FindReactor: Reactor {
         var state = state
         switch mutation {
         case .setAllItemsInfo(let allItemsInfo):
-            state.allItemsInfo = allItemsInfo
+            state.allItemsInfo = [ProductInfoSectionModel(data: allItemsInfo, header: "商品")]
         case .appendItemsInfo(let allItemsInfo):
-            state.allItemsInfo.append(contentsOf: allItemsInfo)
+            state.allItemsInfo[0].data.append(contentsOf: allItemsInfo)
         }
         return state
-    }
-}
-
-extension FindReactor {
-    
-    fileprivate func transformUIData(allItemsInfos: [ProductInfoModel], isUpRefresh: Bool = false) -> Mutation {
-        let data =  allItemsInfos.map { (allItemsInfo) -> ProductInfoModelUI in
-            var item = ProductInfoModelUI()
-            item.imageUrl = allItemsInfo.imageUrl
-            item.name = allItemsInfo.name
-            item.info = allItemsInfo.note
-            item.salePrice = "售价:\(allItemsInfo.salePrice ?? 0)"
-            item.repertory = "库存:\(allItemsInfo.count ?? 0)"
-            item.originalPrice = CommonTools.shareInstance.addlineToLabelText(text: "原价:\(allItemsInfo.costPrice ?? 0)")
-            return item
-        }
-        return isUpRefresh ? Mutation.appendItemsInfo([ProductInfoSectionModel(data: data, header: "商品")]) : Mutation.setAllItemsInfo([ProductInfoSectionModel(data: data, header: "商品")])
     }
 }
 
