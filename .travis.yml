@@ -2,4 +2,4 @@ language: swift
 osx_image: xcode11
 xcode_workspace: SwiftModul.xcworkspace 
 xcode_scheme: SwiftModul
-xcode_destination: platform=iOS Simulator,OS=13,name=iPhone X
+xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone Xʀ
