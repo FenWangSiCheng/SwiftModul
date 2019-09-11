@@ -1,2 +1,5 @@
 language: swift
 osx_image: xcode11
+script: 
+  - xctool -workspace SwiftModul.xcworkspace -scheme SwiftModul -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool test -workspace SwiftModul.xcworkspace -scheme SwiftModulTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
