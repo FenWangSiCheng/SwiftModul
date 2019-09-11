@@ -1,5 +1,7 @@
 ## SwiftModul
 
+https://travis-ci.org/SCKaito/SwiftModul
+
 ### 一个 iOS 项目的骨架（Swift）
 
 ### 环境
@@ -37,11 +39,17 @@ Cocoapods 和 Bundler 详细说明可以看这里[详细说明](https://www.jian
 
 在目前的的架构下网络层的单元测试主要测试 server 的文件，UI 逻辑方面主要测试 reactor 文件。demo 可以查看 FindReactorTests.swift 和 findSeviceTests 两个文件。
 
+### CI
+
+项目中简单集成了[Travis CI](https://travis-ci.com),
+
 ### 其他
 
 - 常用的工具类： 查看Utils文件夹
 - 常用的扩展：查看Extension文件夹
 - 常用协议：查看Protocol文件夹
 - 常用组件：查看Module文件夹
+
+
 
 
