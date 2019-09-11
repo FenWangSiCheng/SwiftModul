@@ -1,5 +1,4 @@
 language: swift
-osx_image: xcode11
-script: 
-  - xcodebuild -workspace SwiftModul.xcworkspace -scheme SwiftModul -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  - xcodebuild test -workspace SwiftModul.xcworkspace -scheme SwiftModulTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+xcode_workspace: SwiftModul.xcodeproj 
+xcode_scheme: SwiftModul
+xcode_destination: platform=iOS Simulator,OS=12,name=iPhone X
