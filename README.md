@@ -1,7 +1,5 @@
 ## SwiftModul
 
-https://travis-ci.org/SCKaito/SwiftModul
-
 ### 一个 iOS 项目的骨架（Swift）
 
 ### 环境
@@ -41,7 +39,9 @@ Cocoapods 和 Bundler 详细说明可以看这里[详细说明](https://www.jian
 
 ### CI
 
-项目中简单集成了[Travis CI](https://travis-ci.com),
+项目中简单集成了[Travis CI](https://travis-ci.com)
+
+[![Build Status](https://www.travis-ci.org/SCKaito/SwiftModul.svg?branch=master)](https://www.travis-ci.org/SCKaito/SwiftModul)
 
 ### 其他
 
