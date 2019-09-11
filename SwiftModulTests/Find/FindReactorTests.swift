@@ -36,38 +36,38 @@ class FindReactorTests: XCTestCase {
 
     func testAllProductItems_name() {
 
-        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].name, "黑巧克力")
+        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].goodName, "黑巧克力")
 
     }
 
     func testAllProductItems_info() {
 
-        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].info, "好吃又好玩")
+        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].goodInfo, "好吃又好玩")
 
     }
 
     func testAllProductItems_salePrice() {
 
-        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].salePrice, "售价:20.1")
+        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].goodSalePrice, "售价:20.1")
 
     }
 
     func testAllProductItems_originalPrice() {
 
         let original = CommonTools.shareInstance.addlineToLabelText(text: "原价:30.1")
-        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].originalPrice, original)
+        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].goodOriginalPrice, original)
 
     }
 
     func testAllProductItems_repertory() {
 
-        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].repertory, "库存:20")
+        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].goodRepertory, "库存:20")
 
     }
 
     func testAllProductItems_image() {
 
-        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].imageUrl, "https://s2.ax1x.com/2019/04/19/Epj1HI.png")
+        XCTAssertEqual(reactor.currentState.allItemsInfo[0].data[0].goodImageUrl, "https://s2.ax1x.com/2019/04/19/Epj1HI.png")
 
     }
 

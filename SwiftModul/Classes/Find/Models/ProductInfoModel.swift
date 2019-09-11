@@ -54,44 +54,37 @@ struct ProductInfoModel: Equatable, Mappable {
     }
 }
 
-extension ProductInfoModel: ProductInfoProtocal{
+extension ProductInfoModel: ProductInfoProtocal {
     var goodName: String? {
-        get {
-            return self.name
-        }
+
+        return self.name
     }
 
     var goodImageUrl: String? {
-        get {
-            return self.imageUrl
-        }
+
+        return self.imageUrl
     }
 
     var goodInfo: String? {
-        get {
-            return self.note
-        }
+
+        return self.note
     }
 
     var goodSalePrice: String? {
-        get {
-            return "售价:\(self.salePrice ?? 0)"
-        }
+
+        return "售价:\(self.salePrice ?? 0)"
     }
 
     var goodOriginalPrice: NSAttributedString? {
-        get {
-            return CommonTools.shareInstance.addlineToLabelText(text: "原价:\(self.costPrice ?? 0)")
-        }
+
+        return CommonTools.shareInstance.addlineToLabelText(text: "原价:\(self.costPrice ?? 0)")
     }
 
     var goodRepertory: String? {
-        get {
-            return "库存:\(self.count ?? 0)"
-        }
+
+        return "库存:\(self.count ?? 0)"
     }
 }
-
 
 //DataSourceSectionModel
 struct ProductInfoSectionModel: Equatable {
