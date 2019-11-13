@@ -3,8 +3,8 @@
 ### 一个 iOS 项目的骨架（Swift）
 
 ### 环境
-- Xcode10.2
-- Swift5.0
+- Xcode11.1
+- Swift5.1
 
 ### 包管理 
 
@@ -42,6 +42,10 @@ Cocoapods 和 Bundler 详细说明可以看这里[详细说明](https://www.jian
 项目中简单集成了[Travis CI](https://travis-ci.com)
 
 [![Build Status](https://www.travis-ci.org/SCKaito/SwiftModul.svg?branch=master)](https://www.travis-ci.org/SCKaito/SwiftModul)
+
+### 环境区分
+
+项目中通过 Scheme + Xcconfig 文件来区分不同的环境，项目例子中区分三个环境 develop，staging，production。
 
 ### 其他
 
