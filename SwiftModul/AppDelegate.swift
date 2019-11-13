@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         initKeyboard()
+        #if DEVELOP
+        print("1")
+        #elseif STAGING
+        print("2")
+        #elseif PRODUCTION
+        print("3")
+        #endif
         return true
     }
 

@@ -1,0 +1,12 @@
+//
+//  Generated.xcconfig
+//  SwiftModul
+//
+//  Created by wangsicheng on 2019/11/13.
+//  Copyright © 2019 fenrir-cd. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+BUNDLE_SHORT_VERSION=1.0
+BUNDLE_VERSION=1

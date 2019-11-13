@@ -37,10 +37,4 @@ target 'SwiftModulTests' do
   pod 'RxTest', '~> 5.0.0'
 end
 
-target 'SwiftModulUITests' do
-  inherit! :search_paths
-  pod 'RxBlocking', '~> 5.0.0'
-  pod 'RxTest', '~> 5.0.0'
-end
-
 end
