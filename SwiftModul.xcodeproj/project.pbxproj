@@ -85,6 +85,7 @@
 		1537F2F2231CFEC200A0D8F4 /* FindReactorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindReactorTests.swift; sourceTree = "<group>"; };
 		1537F2F6231D0D6400A0D8F4 /* FindServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindServiceTests.swift; sourceTree = "<group>"; };
 		15429E59237C03FD00E8340A /* Generated.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Generated.xcconfig; sourceTree = "<group>"; };
+		15429E9D237C113800E8340A /* SwiftModul copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftModul copy-Info.plist"; path = "/Users/wangsicheng/Desktop/SwiftModul/SwiftModul copy-Info.plist"; sourceTree = "<absolute>"; };
 		1552ADDF22F0144E00A09A30 /* SoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
 		1552ADE322F014AB00A09A30 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		15C301C0237BF8A3003ED923 /* Develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Develop.xcconfig; sourceTree = "<group>"; };
@@ -407,6 +408,7 @@
 				4F5DB8DB20ABC91300999961 /* Products */,
 				81BD459433213D0B10051BB2 /* Pods */,
 				85E94B87043ED515C4F3DCAA /* Frameworks */,
+				15429E9D237C113800E8340A /* SwiftModul copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
