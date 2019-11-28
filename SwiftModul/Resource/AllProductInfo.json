@@ -1,14 +1,14 @@
 {
     "data" : [{
-                    "name" : "黑巧克力",
-                    "image_url" : "https://s2.ax1x.com/2019/04/19/Epj1HI.png",
-                    "item_code" : "1",
-                    "sale_price" : 20.1,
-                    "cost_price" : 30.1,
-                    "count" : 20,
-                    "note" : "好吃又好玩",
-                    "category" : "食品",
-                  },
+        "name" : "黑巧克力",
+        "image_url" : "https://s2.ax1x.com/2019/04/19/Epj1HI.png",
+        "item_code" : "1",
+        "sale_price" : 20.1,
+        "cost_price" : 30.1,
+        "count" : 20,
+        "note" : "好吃又好玩",
+        "category" : "食品",
+    },
     {
         "name" : "黑巧克力",
         "image_url" : "https://s2.ax1x.com/2019/04/19/Epj1HI.png",
@@ -99,5 +99,5 @@
         "note" : "好吃又好玩",
         "category" : "食品",
     }
-                ]
+    ]
 }

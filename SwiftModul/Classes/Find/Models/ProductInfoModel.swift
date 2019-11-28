@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import ObjectMapper
 import RxDataSources
 
 //server data
-struct ProductInfoModel: Equatable, Mappable {
+struct ProductInfoModel: Equatable, Codable {
     /** 商品名字 */
     public var name: String?
     /** 商品图片地址 */
@@ -28,6 +27,17 @@ struct ProductInfoModel: Equatable, Mappable {
     public var note: String?
     /** 分类 */
     public var category: String?
+
+     private enum CodingKeys: String, CodingKey {
+        case name
+        case imageUrl = "image_url"
+        case itemCode = "item_code"
+        case salePrice = "sale_price"
+        case costPrice = "cost_price"
+        case count
+        case note
+        case category
+    }
     
     static func == (lhs: ProductInfoModel, rhs: ProductInfoModel) -> Bool {
         return lhs.name == rhs.name
@@ -39,19 +49,7 @@ struct ProductInfoModel: Equatable, Mappable {
             && lhs.note == rhs.note
             && lhs.category == rhs.category
     }
-    
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        name <- map["name"]
-        imageUrl <- map["image_url"]
-        itemCode <- map["item_code"]
-        salePrice <- map["sale_price"]
-        costPrice <- map["cost_price"]
-        count <- map["count"]
-        note <- map["note"]
-        category <- map["category"]
-    }
+
 }
 
 extension ProductInfoModel: ProductInfoProtocal {
