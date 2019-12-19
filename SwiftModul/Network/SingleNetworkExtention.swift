@@ -20,46 +20,6 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
         }
     }
     
-     public func mapObject<T: Codable>(type: T.Type) -> Single<T> {
-
-           return self.mapJSON().flatMap { response -> Single<T> in
-               guard let json = response as? [String: Any] else {
-                   return Single.error(NetworkError.incorrectDataReturned)
-               }
-               guard let dataDic = json["data"] else {
-                   return Single.error(NetworkError.incorrectDataReturned)
-               }
-               do {
-                   let data = try JSONSerialization.data(withJSONObject: dataDic, options: [])
-
-                   let object = try JSONDecoder().decode(type, from: data)
-                   return Single.just(object)
-               } catch {
-                   return Single.error(NetworkError.incorrectDataReturned)
-               }
-           }
-
-       }
-
-       public func mapObjects<T: Codable>(type: T.Type) -> Single<[T]> {
-
-           return self.mapJSON().flatMap { response -> Single<[T]> in
-               guard let json = response as? [String: Any] else {
-                   return Single.error(NetworkError.incorrectDataReturned)
-               }
-               guard let dataArray = json["data"]  else {
-                   return Single.error(NetworkError.incorrectDataReturned)
-               }
-               do {
-                   let data = try JSONSerialization.data(withJSONObject: dataArray, options: [])
-                   let object = try JSONDecoder().decode([T].self, from: data)
-                   return Single.just(object)
-               } catch {
-                   return Single.error(NetworkError.incorrectDataReturned)
-               }
-           }
-       }
-    
     public func filterStatusCode() -> Single<Element> {
         return flatMap({ (response) -> Single<Element> in
             return Single.just(try response.filterStatusCode())

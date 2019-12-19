@@ -28,17 +28,18 @@ public class Network {
         self.provider = provider
     }
     
-    public func request(target: NetworkTarget) -> Single<Response> {
+    public func request<T: Decodable>(target: NetworkTarget) -> Single<ResponseModel
+        <T>> {
         return provider.rx
             .request(target)
             .filterStatusCode()
+            .map(ResponseModel<T>.self)
     }
 }
 
 extension Network {
     
     func getAllProducts(page: Int) -> Single<[ProductInfoModel]> {
-        return request(target: .getAllProducts(page: page))
-            .mapObjects(type: ProductInfoModel.self)
+        return request(target: .getAllProducts(page: page)).map {$0.data}
     }
 }

@@ -27,3 +27,7 @@ extension Response {
         }
     }
 }
+
+public struct ResponseModel<T: Codable>: Codable {
+    let data: T
+}
