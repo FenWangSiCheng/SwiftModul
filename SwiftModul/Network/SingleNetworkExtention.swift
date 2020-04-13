@@ -29,10 +29,10 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
     public func cacheData(target: NetworkTarget) -> Single<Element> {
         
         return self.flatMap { (respose) -> Single<Element> in
-            CacheToolFactory.dataCacheTool.setObject(respose.data, forKey: target.baseURL.absoluteString + target.path)
+            UserDefaults.standard[target.baseURL.absoluteString + target.path] = respose.data
             return self
             }.catchError {error in
-                let data = CacheToolFactory.dataCacheTool.objectSync(forKey: target.baseURL.absoluteString + target.path)
+                let data = UserDefaults.standard.object(Data.self, with: target.baseURL.absoluteString + target.path)
                 if data == nil {
                     return Single.error(error)
                 } else {

@@ -26,7 +26,6 @@
 		4F222C21215094A5008DFD5A /* SingleNetworkExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F222C1C215094A4008DFD5A /* SingleNetworkExtention.swift */; };
 		4F222C22215094A5008DFD5A /* NetworkTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F222C1D215094A4008DFD5A /* NetworkTarget.swift */; };
 		4F222C23215094A5008DFD5A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F222C1E215094A4008DFD5A /* NetworkError.swift */; };
-		4F222C2A215094CE008DFD5A /* CacheTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F222C25215094CD008DFD5A /* CacheTool.swift */; };
 		4F222C2B215094CE008DFD5A /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F222C26215094CD008DFD5A /* HUD.swift */; };
 		4F222C2C215094CE008DFD5A /* QRCodeScanTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F222C27215094CD008DFD5A /* QRCodeScanTool.swift */; };
 		4F222C2D215094CE008DFD5A /* CommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F222C28215094CD008DFD5A /* CommonTools.swift */; };
@@ -105,7 +104,6 @@
 		4F222C1C215094A4008DFD5A /* SingleNetworkExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleNetworkExtention.swift; sourceTree = "<group>"; };
 		4F222C1D215094A4008DFD5A /* NetworkTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTarget.swift; sourceTree = "<group>"; };
 		4F222C1E215094A4008DFD5A /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		4F222C25215094CD008DFD5A /* CacheTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheTool.swift; sourceTree = "<group>"; };
 		4F222C26215094CD008DFD5A /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		4F222C27215094CD008DFD5A /* QRCodeScanTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScanTool.swift; sourceTree = "<group>"; };
 		4F222C28215094CD008DFD5A /* CommonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonTools.swift; sourceTree = "<group>"; };
@@ -291,7 +289,6 @@
 		4F222C24215094CD008DFD5A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4F222C25215094CD008DFD5A /* CacheTool.swift */,
 				4F222C26215094CD008DFD5A /* HUD.swift */,
 				4F222C27215094CD008DFD5A /* QRCodeScanTool.swift */,
 				4F222C28215094CD008DFD5A /* CommonTools.swift */,
@@ -452,8 +449,8 @@
 				4F679F5F213FDBE50019B847 /* ArrayExtensions.swift */,
 				4F679F5D213FDBD60019B847 /* UIApplicationExtensions.swift */,
 				4F679F5B213FDBCD0019B847 /* UIStoryboardExtensions.swift */,
-				4F679F57213FDBB40019B847 /* UIViewExtensions.swift */,
 				4FFC928C2109772700F16BBE /* UIViewControllerExtensions.swift */,
+				4F679F57213FDBB40019B847 /* UIViewExtensions.swift */,
 				4FFC927021096BF500F16BBE /* UIImageViewExtensions.swift */,
 				4FFC927121096BF500F16BBE /* UIColorExtensions.swift */,
 				4FFC927221096BF500F16BBE /* UImageExtensions.swift */,
@@ -715,7 +712,6 @@
 			files = (
 				1552ADE422F014AB00A09A30 /* MeViewController.swift in Sources */,
 				4F222C2E215094CE008DFD5A /* PermissionTool.swift in Sources */,
-				4F222C2A215094CE008DFD5A /* CacheTool.swift in Sources */,
 				4FFC927321096BF500F16BBE /* UIImageViewExtensions.swift in Sources */,
 				4F5DB8DE20ABC91300999961 /* AppDelegate.swift in Sources */,
 				4F222C21215094A5008DFD5A /* SingleNetworkExtention.swift in Sources */,

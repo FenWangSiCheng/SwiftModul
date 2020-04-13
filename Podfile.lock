@@ -1,57 +1,54 @@
 PODS:
-  - Alamofire (4.8.2)
-  - Cache (5.2.0)
+  - Alamofire (5.0.4)
   - Differentiator (4.0.1)
-  - EmptyDataSet-Swift (4.2.0)
+  - EmptyDataSet-Swift (5.0.0)
   - IQKeyboardManagerSwift (6.4.0)
-  - Kingfisher (5.7.0)
+  - Kingfisher (5.13.2):
+    - Kingfisher/Core (= 5.13.2)
+  - Kingfisher/Core (5.13.2)
   - MJRefresh (3.2.0)
-  - Moya/Core (14.0.0-alpha.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Moya/RxSwift (14.0.0-alpha.1):
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
   - ReactorKit (2.0.1):
     - RxSwift (~> 5.0)
-  - Result (4.1.0)
-  - RxBlocking (5.0.0):
+  - RxBlocking (5.1.0):
     - RxSwift (~> 5)
-  - RxCocoa (5.0.0):
+  - RxCocoa (5.1.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxDataSources (4.0.1):
     - Differentiator (~> 4.0)
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
-  - RxRelay (5.0.0):
+  - RxRelay (5.1.0):
     - RxSwift (~> 5)
-  - RxSwift (5.0.0)
-  - RxTest (5.0.0):
+  - RxSwift (5.1.0)
+  - RxTest (5.1.0):
     - RxSwift (~> 5)
   - SnapKit (5.0.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - Cache (~> 5.2.0)
-  - EmptyDataSet-Swift (~> 4.2.0)
+  - EmptyDataSet-Swift (~> 5.0.0)
   - IQKeyboardManagerSwift (~> 6.4.0)
-  - Kingfisher (~> 5.7.0)
+  - Kingfisher (~> 5.13.2)
   - MJRefresh (~> 3.2.0)
-  - Moya/RxSwift (~> 14.0.0-alpha.1)
+  - Moya/RxSwift (~> 14.0.0)
   - ReactorKit (~> 2.0.1)
-  - RxBlocking (~> 5.0.0)
-  - RxCocoa (~> 5.0.0)
+  - RxBlocking (~> 5.1.0)
+  - RxCocoa (~> 5.1.0)
   - RxDataSources (~> 4.0.1)
-  - RxSwift (~> 5.0.0)
-  - RxTest (~> 5.0.0)
+  - RxSwift (~> 5.1.0)
+  - RxTest (~> 5.1.0)
   - SnapKit (~> 5.0.0)
   - SVProgressHUD (~> 2.2.5)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Cache
     - Differentiator
     - EmptyDataSet-Swift
     - IQKeyboardManagerSwift
@@ -59,7 +56,6 @@ SPEC REPOS:
     - MJRefresh
     - Moya
     - ReactorKit
-    - Result
     - RxBlocking
     - RxCocoa
     - RxDataSources
@@ -70,25 +66,23 @@ SPEC REPOS:
     - SVProgressHUD
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
+  Alamofire: 0fe5fd24b4298dc377a6550da7d5f1b30e286fcb
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  EmptyDataSet-Swift: 1fa0b35f530a35f852ecb2b53564728b0c300aaf
+  EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
   IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
-  Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
+  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
-  Moya: 65485239114b3b327a17dc2e839f6c8b7143aae9
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   ReactorKit: a63c5e11e0fd32d59d672e54178b0ed2876b764b
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxBlocking: 5ef131267220f92ef68531dd6afeaf407cd6b41a
+  RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
-  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
+  RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
+  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  RxTest: d5e1c9c1880de2751041fa485d476ce006967b31
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: e392db30a1696f41dc64b7d5f51bb9a1fbd3adfd
+PODFILE CHECKSUM: 41cbddb180384e4fe123d25c8cd90c6fe4151be7
 
 COCOAPODS: 1.7.5

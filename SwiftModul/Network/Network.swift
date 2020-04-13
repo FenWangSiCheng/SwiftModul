@@ -10,19 +10,22 @@ import UIKit
 import Moya
 import RxSwift
 
+private func JSONResponseDataFormatter(_ data: Data) -> String {
+    do {
+        let dataAsJSON = try JSONSerialization.jsonObject(with: data)
+        let prettyData = try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
+        return String(data: prettyData, encoding: .utf8) ?? String(data: data, encoding: .utf8) ?? ""
+    } catch {
+        return String(data: data, encoding: .utf8) ?? ""
+    }
+}
+
 public class Network {
     
     private var provider: MoyaProvider<NetworkTarget>!
-    
-    public static let instance = Network(provider: MoyaProvider<NetworkTarget>(stubClosure: MoyaProvider.immediatelyStub, plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: { (data) -> (Data) in
-        do {
-            let dataAsJSON = try JSONSerialization.jsonObject(with: data)
-            let prettyData = try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
-            return prettyData
-        } catch {
-            return data
-        }
-    })]))
+
+    public static let instance = Network(provider: MoyaProvider<NetworkTarget>(stubClosure: MoyaProvider.immediatelyStub, plugins: [NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: JSONResponseDataFormatter),
+                                                                                                                                                                             logOptions: .verbose))]))
     
     init(provider: MoyaProvider<NetworkTarget>) {
         self.provider = provider
@@ -30,10 +33,10 @@ public class Network {
     
     public func request<T: Decodable>(target: NetworkTarget) -> Single<ResponseModel
         <T>> {
-        return provider.rx
-            .request(target)
-            .filterStatusCode()
-            .map(ResponseModel<T>.self)
+            return provider.rx
+                .request(target)
+                .filterStatusCode()
+                .map(ResponseModel<T>.self)
     }
 }
 

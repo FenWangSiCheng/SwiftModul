@@ -31,12 +31,6 @@ let navigationBarHeight: CGFloat = iphoneX || iphoneXR ? 88 : 64
 let tabbarHeight: CGFloat = iphoneX || iphoneXR ? 83 : 49
 let statusBarHeight: CGFloat = iphoneX || iphoneXR ? 44 : 20
 
-struct PreferenceNames {
-
-    static let maxCacheSize = PreferenceName<String>(rawValue: "MaxCacheSize")!
-    static let isMan = PreferenceName<Bool>(rawValue: "IsMan")!
-}
-
 struct AssetsImageNames {
 
     static let placeHodelName = "tabbar_download_h"
@@ -54,12 +48,6 @@ public enum DateMode: Int {
 public enum TemperatureMode: Int {
     case celsius
     case fahrenheit
-}
-
-public struct UserDefaultsKeys {
-    static let dateMode = PreferenceName<Int>(rawValue: "dateMode")!
-    static let temperatureMode = PreferenceName<Int>(rawValue: "temperatureMode")!
-    static let locations = PreferenceName<Int>(rawValue: "locations")!
 }
 
 struct APIConst {
