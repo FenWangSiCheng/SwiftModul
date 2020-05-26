@@ -28,29 +28,29 @@ extension Refreshable {
     
     func refreshStatusBind(to scrollView: UIScrollView, headerClosure header: (() -> Void)? = nil, footerClosure footer: (() -> Void)? = nil) -> Disposable {
         
-        if header != nil {
+        if let header = header {
             scrollView.mj_header = MJRefreshNormalHeader(refreshingBlock: header)
         }
         
-        if footer != nil {
+        if let footer = footer {
             scrollView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: footer)
         }
         
         return refreshStatus.subscribe(onNext: { (status) in
             switch status {
             case .beingHeaderRefresh:
-                scrollView.mj_header.beginRefreshing()
+                scrollView.mj_header?.beginRefreshing()
             case .endHeaderRefresh:
-                scrollView.mj_header.endRefreshing()
+                scrollView.mj_header?.endRefreshing()
             case .beingFooterRefresh:
-                scrollView.mj_footer.beginRefreshing()
+                scrollView.mj_footer?.beginRefreshing()
             case .endFooterRefresh:
-                scrollView.mj_footer.isHidden = false
-                scrollView.mj_footer.endRefreshing()
+                scrollView.mj_footer?.isHidden = false
+                scrollView.mj_footer?.endRefreshing()
             case .noMoreData:
-                scrollView.mj_footer.endRefreshingWithNoMoreData()
+                scrollView.mj_footer?.endRefreshingWithNoMoreData()
             case .none:
-                scrollView.mj_footer.isHidden = true
+                scrollView.mj_footer?.isHidden = true
             }
         })
     }

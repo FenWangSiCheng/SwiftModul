@@ -96,6 +96,6 @@ extension FindViewController {
 
     fileprivate func getNetData() {
 
-        tableView.mj_header.beginRefreshing()
+        tableView.mj_header?.beginRefreshing()
     }
 }
