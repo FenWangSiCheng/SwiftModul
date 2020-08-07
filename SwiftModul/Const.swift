@@ -97,3 +97,16 @@ func delay(_ time: TimeInterval, task: @escaping () -> Void) -> GCDDelayTask? {
 func cancel(_ task: GCDDelayTask?) {
     task?(true)
 }
+
+// MARK: - operator
+infix operator ???: NilCoalescingPrecedence
+
+public func ???<T> (optional: T?, defaultValue: @autoclosure () -> String)
+    -> String {
+    switch optional {
+    case let value?:
+        return String(describing: value)
+    case nil:
+        return defaultValue()
+    }
+}

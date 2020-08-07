@@ -17,6 +17,9 @@ extension Array where Element: Equatable {
     }
 
     subscript (safe index: Int) -> Element? {
-        return (0 ..< count).contains(index) ? self[index] : nil
+        guard (startIndex..<endIndex).contains(index) else {
+            return nil
+        }
+        return self[index]
     }
 }
