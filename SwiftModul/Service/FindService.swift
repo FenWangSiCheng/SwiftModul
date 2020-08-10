@@ -18,6 +18,6 @@ class FindService {
     }
     
     public func getAllProducts(page: Int) -> Single<[ProductInfoModel]> {
-        return networking.getAllProducts(page: page)
+        return networking.getAllProducts(parameters: [APIConst.getAllProducts: page])
     }
 }

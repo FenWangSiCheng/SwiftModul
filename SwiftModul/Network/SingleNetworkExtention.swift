@@ -25,7 +25,11 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
             return Single.just(try response.filterStatusCode())
         })
     }
-    
+
+    public func parse<T: Decodable>(_ type: T.Type) -> Single<T> {
+        return map(T.self)
+    }
+
     public func cacheData(target: NetworkTarget) -> Single<Element> {
         
         return self.flatMap { (respose) -> Single<Element> in

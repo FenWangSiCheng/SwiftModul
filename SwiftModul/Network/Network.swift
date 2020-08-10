@@ -31,18 +31,22 @@ public class Network {
         self.provider = provider
     }
     
-    public func request<T: Decodable>(target: NetworkTarget) -> Single<ResponseModel
-        <T>> {
+    public func request<T>(target: NetworkTarget) -> Single<ResponseModel<T>> {
             return provider.rx
                 .request(target)
                 .filterStatusCode()
-                .map(ResponseModel<T>.self)
+                .parse(ResponseModel<T>.self)
+        
     }
 }
 
 extension Network {
     
-    func getAllProducts(page: Int) -> Single<[ProductInfoModel]> {
-        return request(target: .getAllProducts(page: page)).map {$0.data}
+    func getAllProducts(parameters: [String: Any]) -> Single<[ProductInfoModel]> {
+        return request(target: .getAllProducts(parameters: parameters)).map {$0.data}
     }
+}
+
+public struct ResponseModel<T: Decodable>: Decodable {
+    let data: T
 }

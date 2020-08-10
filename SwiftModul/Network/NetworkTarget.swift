@@ -10,7 +10,7 @@ import UIKit
 import Moya
 
 public enum NetworkTarget {
-    case getAllProducts(page: Int)
+    case getAllProducts(parameters: [String: Any])
 }
 
 extension NetworkTarget: TargetType {
@@ -43,8 +43,8 @@ extension NetworkTarget: TargetType {
     
     public  var task: Task {
         switch self {
-        case let .getAllProducts(page):
-            return .requestParameters(parameters: [APIConst.page: page],
+        case let .getAllProducts(parameters):
+            return .requestParameters(parameters: parameters,
                                       encoding: URLEncoding.default)
         }
     }
