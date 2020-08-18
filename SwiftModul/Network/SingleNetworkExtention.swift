@@ -30,7 +30,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
         return map(T.self)
     }
 
-    public func cacheData(target: NetworkTarget) -> Single<Element> {
+    public func cacheData(_ target: NetworkTarget) -> Single<Element> {
         
         return self.flatMap { (respose) -> Single<Element> in
             UserDefaults.standard[target.baseURL.absoluteString + target.path] = respose.data
