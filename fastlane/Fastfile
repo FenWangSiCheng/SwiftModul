@@ -1,0 +1,72 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform :ios
+
+platform :ios do
+
+    before_all do
+	ENV["OUTPUT_DIR"] = "./output"
+        ENV["DATE"] = "#{Time.now.strftime("%Y%m%d-%H%M%S")}"
+        ENV["LAST_COMMIT"] = "#{last_git_commit[:abbreviated_commit_hash]}"
+        ENV["IPA_NAME_PREFIX"] = "SwiftModul_"
+        ENV["IPA_NAME_SUFFIX"] = "_#{ENV["DATE"]}_#{ENV["LAST_COMMIT"]}"
+    end
+
+    lane :build_ios_develop do
+        build(scheme:"SwiftModul", method: "development")
+    end
+
+    lane :build_ios_staging do
+        build(scheme:"Staging", method: "development")
+    end
+
+    lane :build_ios_production do
+        build(scheme:"Production", method: "development")
+    end
+
+    private_lane :build do | options |
+        scheme = options[:scheme].to_s
+        method = options[:method].to_s
+
+        verify_nil_or_empty(scheme, "Scheme is nil.")
+        verify_nil_or_empty(method, "Method is nil.")
+
+        ipa_name = ENV["IPA_NAME_PREFIX"] + "_v" + version_number2 + ENV["IPA_NAME_SUFFIX"]
+
+        gym(
+            scheme:scheme,
+            export_method:method,
+            output_name: ipa_name,
+            output_directory:ENV["OUTPUT_DIR"],
+        )
+    end
+
+    def version_number2()
+        fastlane_require 'Xcodeproj'
+        configuration_file = File.expand_path("..") + "/#{ENV["APP_NAME"]}SwiftModul/Xcconfigs/Generated.xcconfig"
+        puts configuration_file
+        configuration = Xcodeproj::Config.new(configuration_file)
+        version = configuration.attributes['BUNDLE_SHORT_VERSION']
+        return version.to_s.chomp
+    end
+
+    def verify_nil_or_empty(param, errorMsg)
+      if (param.nil? or param.empty?)
+        error(errorMsg)
+      end
+    end
+end
+

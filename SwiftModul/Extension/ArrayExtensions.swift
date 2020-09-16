@@ -16,6 +16,14 @@ extension Array where Element: Equatable {
         }
     }
 
+    func indices(of item: Element) -> [Index] {
+        return indices.filter { self[$0] == item }
+    }
+
+}
+
+extension Array {
+    
     subscript (safe index: Int) -> Element? {
         guard (startIndex..<endIndex).contains(index) else {
             return nil
