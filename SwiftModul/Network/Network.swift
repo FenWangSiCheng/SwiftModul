@@ -10,6 +10,30 @@ import UIKit
 import Moya
 import RxSwift
 
+protocol CachePolicyGettableType {
+    var cachePolicy: URLRequest.CachePolicy? { get }
+}
+
+final class CachePolicyPlugin: PluginType {
+    func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+        guard let policyGettable = target as? CachePolicyGettableType, let policy = policyGettable.cachePolicy else {
+            return request
+        }
+
+        var mutableRequest = request
+        mutableRequest.cachePolicy = policy
+
+        return mutableRequest
+    }
+}
+
+extension NetworkTarget: CachePolicyGettableType {
+    var cachePolicy: URLRequest.CachePolicy? {
+        .reloadIgnoringLocalCacheData
+    }
+}
+
+
 private func JSONResponseDataFormatter(_ data: Data) -> String {
     do {
         let dataAsJSON = try JSONSerialization.jsonObject(with: data)
@@ -24,7 +48,7 @@ public class Network {
     
     private var provider: MoyaProvider<NetworkTarget>!
 
-    public static let instance = Network(provider: MoyaProvider<NetworkTarget>(stubClosure: MoyaProvider.immediatelyStub, plugins: [NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: JSONResponseDataFormatter),
+    public static let instance = Network(provider: MoyaProvider<NetworkTarget>(stubClosure: MoyaProvider.immediatelyStub, plugins: [CachePolicyPlugin(), NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: JSONResponseDataFormatter),
                                                                                                                                                                              logOptions: .verbose))]))
     
     init(provider: MoyaProvider<NetworkTarget>) {
