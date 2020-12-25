@@ -40,7 +40,7 @@ enum NetworkError: Error, Equatable {
     init(error: Error) {
         if let moyaError = error as? MoyaError {
             switch moyaError {
-            case .jsonMapping:
+            case .jsonMapping, .objectMapping:
                 self = .incorrectDataReturned
             case .statusCode(let response):
                 switch response.statusCode {
@@ -75,4 +75,5 @@ enum NetworkError: Error, Equatable {
             self = .unknown
         }
     }
+
 }

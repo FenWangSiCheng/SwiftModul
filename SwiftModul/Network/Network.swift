@@ -33,7 +33,6 @@ extension NetworkTarget: CachePolicyGettableType {
     }
 }
 
-
 private func JSONResponseDataFormatter(_ data: Data) -> String {
     do {
         let dataAsJSON = try JSONSerialization.jsonObject(with: data)

@@ -9,7 +9,6 @@
 import XCTest
 import RxSwift
 import Moya
-import ObjectMapper
 import RxBlocking
 import RxTest
 
@@ -114,9 +113,11 @@ class FindServiceTests: XCTestCase {
                 .getAllProducts(page: 0)
                 .toBlocking()
                 .first()
-        } catch { netError = NetworkError(error: error) }
+        } catch {
+            netError = NetworkError(error: error)
+        }
 
-        XCTAssertEqual(netError, NetworkError.incorrectDataReturned)
+        XCTAssertEqual(netError!, NetworkError.incorrectDataReturned)
     }
 
     func testData_allProductInfos() {
@@ -130,20 +131,23 @@ class FindServiceTests: XCTestCase {
             stubClosure: MoyaProvider.immediatelyStub)
         let netwoking = Network(provider: provider)
         var response: [ProductInfoModel]?
+        var model: [ProductInfoModel]?
 
+        let netData = CommonTools.shareInstance.loadDataFromBundle(ofName: "AllProductInfo", ext: "json")
         do {
             response = try ServiceManager(networking: netwoking)
                 .findService
                 .getAllProducts(page: 0)
                 .toBlocking()
                 .first()
+
+            let jsonObject = try JSONSerialization.jsonObject(with: netData!, options: .allowFragments)
+            let data = try JSONSerialization.data(withJSONObject: jsonObject)
+            let decode = JSONDecoder()
+            let responseModel = try decode.decode(ResponseModel<[ProductInfoModel]>.self, from: data)
+            model = responseModel.data
         } catch {}
 
-        let data = CommonTools.shareInstance.loadDataFromBundle(ofName: "AllProductInfo", ext: "json")
-        let dictionary = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any]
-        let mesageDic = dictionary!["data"] as? [[String: Any]]
-        let models = Mapper<ProductInfoModel>().mapArray(JSONObject: mesageDic)
-
-        XCTAssertEqual(response, models)
+        XCTAssertEqual(response, model)
     }
 }
