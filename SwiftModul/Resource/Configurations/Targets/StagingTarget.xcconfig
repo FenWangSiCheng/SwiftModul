@@ -8,5 +8,6 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 #include "BaseTarget.xcconfig"
+#include "Pods/Target Support Files/Pods-SwiftModul/Pods-SwiftModul.staging.xcconfig"
 PRODUCT_BUNDLE_NAME = $(inherited) Staging
 PRODUCT_BUNDLE_IDENTIFIER = test.SwiftModul

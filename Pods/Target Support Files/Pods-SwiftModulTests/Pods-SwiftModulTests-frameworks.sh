@@ -160,32 +160,17 @@ strip_invalid_archs() {
 }
 
 
-if [[ "$CONFIGURATION" == "Debug" ]]; then
+if [[ "$CONFIGURATION" == "Develop" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
 fi
-if [[ "$CONFIGURATION" == "Debug Production" ]]; then
+if [[ "$CONFIGURATION" == "Staging" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
 fi
-if [[ "$CONFIGURATION" == "Debug Staging" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
-fi
-if [[ "$CONFIGURATION" == "Release Production" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
-fi
-if [[ "$CONFIGURATION" == "Release Staging" ]]; then
+if [[ "$CONFIGURATION" == "Production" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
