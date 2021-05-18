@@ -60,44 +60,6 @@ struct APIConst {
 
 }
 
-// MARK: - gcd delay
-typealias GCDDelayTask = (_ cancel: Bool) -> Void
-
-func delay(_ time: TimeInterval, task: @escaping () -> Void) -> GCDDelayTask? {
-
-    func dispatch_later(block: @escaping () -> Void) {
-        let t = DispatchTime.now() + time
-        DispatchQueue.main.asyncAfter(deadline: t, execute: block)
-    }
-
-    var closure: (() -> Void)? = task
-    var result: GCDDelayTask?
-
-    let delayedClosure: GCDDelayTask = {
-        cancel in
-        if let internalClosure = closure {
-            if cancel == false {
-                DispatchQueue.main.async(execute: internalClosure)
-            }
-        }
-        closure = nil
-        result = nil
-    }
-
-    result = delayedClosure
-
-    dispatch_later {
-        if let delayedClosure = result {
-            delayedClosure(false)
-        }
-    }
-    return result
-}
-
-func cancel(_ task: GCDDelayTask?) {
-    task?(true)
-}
-
 // MARK: - operator
 infix operator ???: NilCoalescingPrecedence
 

@@ -14,14 +14,6 @@
 		1537F2D3231CB49300A0D8F4 /* NSObjectExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537F2D2231CB49300A0D8F4 /* NSObjectExtention.swift */; };
 		1537F2F3231CFEC200A0D8F4 /* FindReactorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537F2F2231CFEC200A0D8F4 /* FindReactorTests.swift */; };
 		1537F2F7231D0D6400A0D8F4 /* FindServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537F2F6231D0D6400A0D8F4 /* FindServiceTests.swift */; };
-		15394A4E2629280E009A4E25 /* DevelopTarget.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 15394A452629280E009A4E25 /* DevelopTarget.xcconfig */; };
-		15394A4F2629280E009A4E25 /* StagingTarget.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 15394A462629280E009A4E25 /* StagingTarget.xcconfig */; };
-		15394A502629280E009A4E25 /* ProductionTarget.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 15394A472629280E009A4E25 /* ProductionTarget.xcconfig */; };
-		15394A512629280E009A4E25 /* BaseTarget.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 15394A482629280E009A4E25 /* BaseTarget.xcconfig */; };
-		15394A522629280E009A4E25 /* ProductionProject.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 15394A4A2629280E009A4E25 /* ProductionProject.xcconfig */; };
-		15394A532629280E009A4E25 /* DevelopProject.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 15394A4B2629280E009A4E25 /* DevelopProject.xcconfig */; };
-		15394A542629280E009A4E25 /* BaseProject.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 15394A4C2629280E009A4E25 /* BaseProject.xcconfig */; };
-		15394A552629280E009A4E25 /* StagingProject.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 15394A4D2629280E009A4E25 /* StagingProject.xcconfig */; };
 		1552ADE022F0144E00A09A30 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552ADDF22F0144E00A09A30 /* SoundViewController.swift */; };
 		1552ADE422F014AB00A09A30 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552ADE322F014AB00A09A30 /* MeViewController.swift */; };
 		15C345422317AB60009B2146 /* ProductInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C345412317AB60009B2146 /* ProductInfoModel.swift */; };
@@ -131,7 +123,7 @@
 		4F421E7920ECAFFE00479EFF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4F421E7C20ECB17800479EFF /* FindService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindService.swift; sourceTree = "<group>"; };
 		4F421E7E20ECB6C200479EFF /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
-		4F5DB8DA20ABC91300999961 /* SwiftModul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftModul.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F5DB8DA20ABC91300999961 /* SwiftModul Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftModul Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5DB8DD20ABC91300999961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F5DB8E220ABC91300999961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F5DB8E720ABC91500999961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -451,7 +443,7 @@
 		4F5DB8DB20ABC91300999961 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4F5DB8DA20ABC91300999961 /* SwiftModul.app */,
+				4F5DB8DA20ABC91300999961 /* SwiftModul Dev.app */,
 				1537F2D8231CFC3E00A0D8F4 /* SwiftModulTests.xctest */,
 			);
 			name = Products;
@@ -570,6 +562,7 @@
 				4F5DB8D720ABC91300999961 /* Frameworks */,
 				4F5DB8D820ABC91300999961 /* Resources */,
 				5B5F0CF6574BA1947C11BCCF /* [CP] Embed Pods Frameworks */,
+				15D21E6A2653B623008DE80D /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -577,7 +570,7 @@
 			);
 			name = SwiftModul;
 			productName = SwiftModul;
-			productReference = 4F5DB8DA20ABC91300999961 /* SwiftModul.app */;
+			productReference = 4F5DB8DA20ABC91300999961 /* SwiftModul Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -587,7 +580,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "fenrir-cd";
 				TargetAttributes = {
 					1537F2D7231CFC3E00A0D8F4 = {
@@ -633,20 +626,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				15C345462317CE84009B2146 /* AllProductInfo.json in Resources */,
-				15394A512629280E009A4E25 /* BaseTarget.xcconfig in Resources */,
-				15394A552629280E009A4E25 /* StagingProject.xcconfig in Resources */,
-				15394A4F2629280E009A4E25 /* StagingTarget.xcconfig in Resources */,
-				15394A502629280E009A4E25 /* ProductionTarget.xcconfig in Resources */,
 				4FBC859F21ACEFA10087D3B2 /* FPWebViewController.storyboard in Resources */,
-				15394A542629280E009A4E25 /* BaseProject.xcconfig in Resources */,
-				15394A532629280E009A4E25 /* DevelopProject.xcconfig in Resources */,
 				4FCA671020BD09A500E59545 /* Sound.storyboard in Resources */,
-				15394A4E2629280E009A4E25 /* DevelopTarget.xcconfig in Resources */,
 				15254C1E225B422200D18909 /* EmptyDataView.xib in Resources */,
 				4F5DB8E820ABC91500999961 /* LaunchScreen.storyboard in Resources */,
 				4F5DB8E320ABC91300999961 /* Main.storyboard in Resources */,
 				4F3FBE3420BD337600554A72 /* Assets.xcassets in Resources */,
-				15394A522629280E009A4E25 /* ProductionProject.xcconfig in Resources */,
 				4FCA671420BD09BA00E59545 /* Me.storyboard in Resources */,
 				4FCA670E20BD099100E59545 /* Find.storyboard in Resources */,
 			);
@@ -655,6 +640,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		15D21E6A2653B623008DE80D /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		5B5F0CF6574BA1947C11BCCF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -918,7 +921,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftModul/Bridging-Header.h";
 			};
@@ -1019,7 +1021,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftModul/Bridging-Header.h";
 			};
@@ -1123,7 +1124,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftModul/Bridging-Header.h";
 			};

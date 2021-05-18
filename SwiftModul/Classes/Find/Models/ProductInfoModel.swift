@@ -9,7 +9,6 @@
 import UIKit
 import RxDataSources
 
-//server data
 struct ProductInfoModel: Equatable, Codable {
     /** 商品名字 */
     public var name: String?
@@ -84,7 +83,6 @@ extension ProductInfoModel: ProductInfoProtocal {
     }
 }
 
-//DataSourceSectionModel
 struct ProductInfoSectionModel: Equatable {
     var data: [ProductInfoModel]
     var header: String
@@ -106,7 +104,6 @@ extension ProductInfoSectionModel: SectionModelType {
     }
 }
 
-//modelProtocal
 protocol ProductInfoProtocal {
     
     var goodName: String? { get }

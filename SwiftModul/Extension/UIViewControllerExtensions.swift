@@ -1,7 +1,6 @@
 //
 //  UIViewController+Extension.swift
 //  FireProtectionClient
-//t
 //  Created by wangsicheng on 2018/01/31.
 //  Copyright © 2018年 Fenrir Chengdu Inc. All rights reserved.
 //

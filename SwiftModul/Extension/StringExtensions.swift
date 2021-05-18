@@ -7,23 +7,11 @@
 //
 
 import Foundation
+import CryptoKit
 
 extension String {
 
-    /// md5 encrypt
-    ///
-    /// - Returns: string
-    func md5String() -> String {
-        let str = self.cString(using: String.Encoding.utf8)
-        let strLen = CC_LONG(self.lengthOfBytes(using: String.Encoding.utf8))
-        let digestLen = Int(CC_MD5_DIGEST_LENGTH)
-        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
-        CC_MD5(str!, strLen, result)
-        let hash = NSMutableString()
-        for i in 0 ..< digestLen {
-            hash.appendFormat("%02x", result[i])
-        }
-        result.deinitialize(count: digestLen)
-        return String(format: hash as String)
+    func md5() -> String {
+        return Insecure.MD5.hash(data: self.data(using: .utf8)!).map { String(format: "%02hhx", $0) }.joined()
     }
 }

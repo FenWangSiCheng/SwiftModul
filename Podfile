@@ -15,6 +15,7 @@ pod 'IQKeyboardManagerSwift', '~> 6.5.5'
 pod 'EmptyDataSet-Swift', '~> 5.0.0'
 pod 'Kingfisher', '~> 5.14.0'
 pod 'SnapKit', '~> 5.0.1'
+pod 'SwiftLint', '~> 0.43.1', configurations: ['develop']
 
 #OC
 pod 'SVProgressHUD', '~> 2.2.5'

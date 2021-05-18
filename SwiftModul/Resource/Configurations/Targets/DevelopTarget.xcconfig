@@ -9,5 +9,5 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 #include "BaseTarget.xcconfig"
 #include "Pods/Target Support Files/Pods-SwiftModul/Pods-SwiftModul.develop.xcconfig"
-PRODUCT_BUNDLE_NAME = $(inherited) Develop
+PRODUCT_NAME = SwiftModul Dev
 PRODUCT_BUNDLE_IDENTIFIER = test.SwiftModul.Develop

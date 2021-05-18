@@ -268,7 +268,6 @@ First of all, you have to decide what to test. There are two things to test: a v
 A view can be tested with a *stub* reactor. A reactor has a property `stub` which can log actions and force change states. If a reactor's stub is enabled, both `mutate()` and `reduce()` are not executed. A stub has these properties:
 
 ```swift
-var isEnabled: Bool { get set }
 var state: StateRelay<Reactor.State> { get }
 var action: ActionSubject<Reactor.Action> { get }
 var actions: [Reactor.Action] { get } // recorded actions
@@ -280,7 +279,7 @@ Here are some example test cases:
 func testAction_refresh() {
   // 1. prepare a stub reactor
   let reactor = MyReactor()
-  reactor.stub.isEnabled = true
+  reactor.isStubEnabled = true
 
   // 2. prepare a view with a stub reactor
   let view = MyView()
@@ -296,7 +295,7 @@ func testAction_refresh() {
 func testState_isLoading() {
   // 1. prepare a stub reactor
   let reactor = MyReactor()
-  reactor.stub.isEnabled = true
+  reactor.isStubEnabled = true
 
   // 2. prepare a view with a stub reactor
   let view = MyView()
@@ -369,6 +368,8 @@ final class MyReactor: Reactor {
 * [Passcode](https://github.com/cruisediary/Passcode): Passcode for iOS RxSwift, ReactorKit and IGListKit example
 * [Flickr Search](https://github.com/TaeJoongYoon/FlickrSearch): A simple application which provides a Flickr Photo search with RxSwift and ReactorKit
 * [ReactorKitExample](https://github.com/gre4ixin/ReactorKitExample)
+* [reactorkit-keyboard-example](https://github.com/techinpark/reactorkit-keyboard-example): iOS Application example for develop keyboard-extensions using ReactorKit Architecture.
+* [SWHub](https://github.com/tospery/SWHub): Use ReactorKit develop the Github client
 
 ## Dependencies
 
@@ -449,6 +450,8 @@ Any discussions and pull requests are welcomed 💖
   <a href="https://hyperconnect.com/"><img align="center" height="62" alt="Hyperconnect" hspace="15" src="https://user-images.githubusercontent.com/931655/50819891-aa89d200-136e-11e9-8b19-780e64e54b2a.png"></a>
   <a href="https://toss.im/career/?category=engineering&positionId=7"><img align="center" height="28" alt="Toss" hspace="15" src="https://user-images.githubusercontent.com/931655/65512318-ede39b00-df13-11e9-874c-f1e478bda6c8.png"></a>
   <a href="https://pay.line.me"><img align="center" height="58" alt="LINE Pay" hspace="15" src="https://user-images.githubusercontent.com/68603/68569839-7efdd980-04a2-11ea-8d7e-673831b1b658.png"></a>
+  <br><br>
+  <a href="https://www.gccompany.co.kr/"><img align="center" height="45" alt="LINE Pay" hspace="15" src="https://user-images.githubusercontent.com/931655/84870371-32beeb80-b0ba-11ea-8530-0dc71c4e385e.png"></a>
   <br><br>
 </p>
 
