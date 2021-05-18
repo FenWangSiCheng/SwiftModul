@@ -14,33 +14,26 @@ import RxSwift
 let productInfolimitCount: Int = 10
 
 final class FindReactor: Reactor {
-    
     var page: Int = 0
-    
     enum Action {
         case downRefresh(searchName: String?)
         case upRefresh(searchName: String?)
     }
-    
     enum Mutation {
         case setAllItemsInfo([ProductInfoModel])
         case appendItemsInfo([ProductInfoModel])
     }
-    
     struct State {
         var allItemsInfo: [ProductInfoSectionModel]
         var refreshStatus: BehaviorRelay<RefreshStatus>
     }
-    
     let initialState: State
-    
     init(refreshStatus: BehaviorRelay<RefreshStatus> ) {
         self.initialState = State(
             allItemsInfo: [],
             refreshStatus: refreshStatus
         )
     }
-    
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .downRefresh(searchName: _):
@@ -82,7 +75,6 @@ final class FindReactor: Reactor {
                 })
         }
     }
-    
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
@@ -96,7 +88,6 @@ final class FindReactor: Reactor {
 }
 
 extension FindReactor {
-    
     fileprivate func isRefreshing() -> Bool {
 
         return currentState.refreshStatus.value == .beingHeaderRefresh || currentState.refreshStatus.value == .beingFooterRefresh

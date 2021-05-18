@@ -9,19 +9,15 @@
 import UIKit
 
 class FindTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var headerImageView: UIImageView!
-    
+
     @IBOutlet weak var nameLabel: UILabel!
-    
     public func configureCell(data: ProductInfoProtocal) {
         headerImageView.setImage(data.goodImageUrl, "")
         nameLabel.text = data.goodName
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
-    
 }

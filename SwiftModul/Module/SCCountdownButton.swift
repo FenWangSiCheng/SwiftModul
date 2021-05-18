@@ -22,11 +22,11 @@ class SCCountdownButton: UIButton {
     private var second = 0
     private var timer: Timer?
 
-    private var timeLabel: UILabel!
-    private var normalText: String!
-    private var normalTextColor: UIColor!
-    private var disabledText: String!
-    private var disabledTextColor: UIColor!
+    private var timeLabel: UILabel?
+    private var normalText: String?
+    private var normalTextColor: UIColor?
+    private var disabledText: String?
+    private var disabledTextColor: UIColor?
 
     // MARK: Life Cycle
     override func awakeFromNib() {
@@ -47,11 +47,11 @@ class SCCountdownButton: UIButton {
         setTitle("", for: .normal)
         setTitle("", for: .disabled)
         timeLabel = UILabel(frame: bounds)
-        timeLabel.textAlignment = .center
-        timeLabel.font = titleLabel?.font
-        timeLabel.textColor = normalTextColor
-        timeLabel.text = normalText
-        addSubview(timeLabel)
+        timeLabel?.textAlignment = .center
+        timeLabel?.font = titleLabel?.font
+        timeLabel?.textColor = normalTextColor
+        timeLabel?.text = normalText
+        addSubview(timeLabel!)
     }
 
     // MARK: Private
@@ -60,7 +60,7 @@ class SCCountdownButton: UIButton {
         updateDisabled()
 
         if timer != nil {
-            timer!.invalidate()
+            timer?.invalidate()
             timer = nil
         }
 
@@ -72,20 +72,20 @@ class SCCountdownButton: UIButton {
         timer = nil
         updateNormal()
     }
-    
     private func updateNormal() {
         isEnabled = true
-        timeLabel.textColor = normalTextColor
-        timeLabel.text = normalText
+        timeLabel?.textColor = normalTextColor
+        timeLabel?.text = normalText
     }
 
     private func updateDisabled() {
         isEnabled = false
-        timeLabel.textColor = disabledTextColor
-        timeLabel.text = disabledText.replacingOccurrences(of: "second", with: "\(second)")
+        timeLabel?.textColor = disabledTextColor
+        timeLabel?.text = disabledText?.replacingOccurrences(of: "second", with: "\(second)")
     }
 
-    @objc private func updateCountdown() {
+    @objc
+    private func updateCountdown() {
         second -= 1
         if second <= 0 {
             countdown = false

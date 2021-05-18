@@ -14,25 +14,21 @@ public enum NetworkTarget {
 }
 
 extension NetworkTarget: TargetType {
-    
     public var baseURL: URL {
         return URL.init(string: APIConst.basePath)!
     }
-    
     public var path: String {
         switch self {
         case .getAllProducts:
             return APIConst.getAllProducts
         }
     }
-    
     public var method: Moya.Method {
         switch self {
         case .getAllProducts:
             return .get
         }
     }
-    
     public var sampleData: Data {
         switch self {
         case .getAllProducts:
@@ -40,7 +36,6 @@ extension NetworkTarget: TargetType {
             return data
         }
     }
-    
     public  var task: Task {
         switch self {
         case let .getAllProducts(parameters):
@@ -48,9 +43,7 @@ extension NetworkTarget: TargetType {
                                       encoding: URLEncoding.default)
         }
     }
-    
     public var headers: [String: String]? {
         return nil
     }
-    
 }

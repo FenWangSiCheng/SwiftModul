@@ -6,21 +6,17 @@ extension UIApplication {
         return value(forKey: "statusBar") as? UIView
     }
 
-    static var topVC: UIViewController {
-        let rootVC = shared.delegate?.window??.rootViewController
-        return topViewController(rootViewController: rootVC!)
-    }
+    static func getTopViewController(base: UIViewController? = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController) -> UIViewController? {
 
-    private static func topViewController(rootViewController: UIViewController) -> UIViewController {
-        if let navi = rootViewController as? UINavigationController,
-            let visibleVC = navi.visibleViewController {
-            return topViewController(rootViewController: visibleVC)
-        }
-        let presentedVC = rootViewController.presentedViewController
-        if presentedVC != nil {
+        if let nav = base as? UINavigationController {
+            return getTopViewController(base: nav.visibleViewController)
 
-            return topViewController(rootViewController: presentedVC!)
+        } else if let tab = base as? UITabBarController, let selected = tab.selectedViewController {
+            return getTopViewController(base: selected)
+
+        } else if let presented = base?.presentedViewController {
+            return getTopViewController(base: presented)
         }
-        return rootViewController
+        return base
     }
 }

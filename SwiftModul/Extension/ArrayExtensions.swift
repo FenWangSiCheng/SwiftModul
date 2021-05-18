@@ -23,7 +23,6 @@ extension Array where Element: Equatable {
 }
 
 extension Array {
-    
     subscript (safe index: Int) -> Element? {
         guard (startIndex..<endIndex).contains(index) else {
             return nil

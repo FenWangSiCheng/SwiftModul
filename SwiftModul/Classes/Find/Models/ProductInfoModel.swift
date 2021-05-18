@@ -37,7 +37,6 @@ struct ProductInfoModel: Equatable, Codable {
         case note
         case category
     }
-    
     static func == (lhs: ProductInfoModel, rhs: ProductInfoModel) -> Bool {
         return lhs.name == rhs.name
             && lhs.imageUrl == rhs.imageUrl
@@ -86,14 +85,12 @@ extension ProductInfoModel: ProductInfoProtocal {
 struct ProductInfoSectionModel: Equatable {
     var data: [ProductInfoModel]
     var header: String
-    
     static func == (lhs: ProductInfoSectionModel, rhs: ProductInfoSectionModel) -> Bool {
         return lhs.data == rhs.data && lhs.header == rhs.header
     }
 }
 
 extension ProductInfoSectionModel: SectionModelType {
-    
     typealias Item = ProductInfoModel
     var items: [ProductInfoModel] {
         return data
@@ -105,12 +102,10 @@ extension ProductInfoSectionModel: SectionModelType {
 }
 
 protocol ProductInfoProtocal {
-    
     var goodName: String? { get }
     var goodImageUrl: String? { get }
     var goodInfo: String? { get }
     var goodSalePrice: String? { get }
     var goodOriginalPrice: NSAttributedString? { get }
     var goodRepertory: String? { get }
-    
 }

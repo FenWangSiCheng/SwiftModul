@@ -44,16 +44,12 @@ private func JSONResponseDataFormatter(_ data: Data) -> String {
 }
 
 public class Network {
-    
     private var provider: MoyaProvider<NetworkTarget>!
 
-    public static let instance = Network(provider: MoyaProvider<NetworkTarget>(stubClosure: MoyaProvider.immediatelyStub, plugins: [CachePolicyPlugin(), NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: JSONResponseDataFormatter),
-                                                                                                                                                                             logOptions: .verbose))]))
-    
+    public static let instance = Network(provider: MoyaProvider<NetworkTarget>(stubClosure: MoyaProvider.immediatelyStub, plugins: [CachePolicyPlugin(), NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: JSONResponseDataFormatter), logOptions: .verbose))]))
     init(provider: MoyaProvider<NetworkTarget>) {
         self.provider = provider
     }
-    
     public func request<T>(_ target: NetworkTarget, isCache: Bool = false) -> Single<ResponseModel<T>> {
         if isCache {
             return provider.rx
@@ -72,7 +68,6 @@ public class Network {
 }
 
 extension Network {
-    
     func getAllProducts(parameters: [String: Any]) -> Single<[ProductInfoModel]> {
         return request(.getAllProducts(parameters: parameters)).map { $0.data }
     }

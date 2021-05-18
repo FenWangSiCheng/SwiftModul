@@ -1,18 +1,65 @@
-excluded:
+excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods
-  - Carthage
+  - "./SwiftModulTests"
+  - "./SwiftModulUITests"
+
 disabled_rules:
+    # Lines should not span too many characters.
   - line_length
-  - trailing_whitespace
+    # Types should be nested at most 1 level deep, and statements should be nested at most 5 levels deep.
+  - nesting
+  - for_where
+
+opt_in_rules:
+    # Prefer checking isEmpty over comparing string to an empty string literal.
+  - empty_string
+    # Case statements should vertically align with their enclosing switch statement, or indented if configured otherwise.
+  - switch_case_alignment
+    # Cases inside a switch should always be on a newline
+  - switch_case_on_newline
+  - overridden_super_call
+    # Closure end should have the same indentation as the line that started it.
+  - closure_end_indentation
+    # Prefer not to use extension access modifiers
+  - no_extension_access_modifier
+  - vertical_whitespace
+  - attributes
+  - collection_alignment
+  - cyclomatic_complexity
+
+
+#  Complexity of function bodies should be limited.
+cyclomatic_complexity:
+  warning: 50
+  error: 100
+
+file_length:
+#  warning: 500
+#  error: 1000
+  warning: 1500
+  error: 2000
+
+force_cast: warning
+
+function_body_length:
+#  warning: 70
+#  error: 100
+  warning: 150
+  error: 200
+
 identifier_name:
   min_length: # only min_length
-    warning: 1
+    warning: 2
     error: 1
   max_length:
     warning: 60
     error: 80
-force_cast: warning
 
-cyclomatic_complexity:
-  warning: 50
-  error: 100
+trailing_comma:
+  mandatory_comma: true # enforce trailing commas
+
+type_body_length:
+#  warning: 300
+#  error: 500
+  warning: 1000
+  error: 1500

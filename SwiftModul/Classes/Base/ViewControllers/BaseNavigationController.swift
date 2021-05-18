@@ -30,7 +30,8 @@ class BaseNavigationController: UINavigationController {
 
     }
 
-    @objc private func back() {
+    @objc
+    private func back() {
         self.popViewController(animated: true)
     }
 

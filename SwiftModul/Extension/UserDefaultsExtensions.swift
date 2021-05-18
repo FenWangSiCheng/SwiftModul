@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension UserDefaults {
+extension UserDefaults {
 
     subscript(key: String) -> Any? {
         get {
