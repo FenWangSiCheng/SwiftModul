@@ -9,5 +9,5 @@ import Foundation
 
 enum UniversalLinks {
 
-    static let baseURL = "https://momentsapp.com/"
+    static let baseURL = "https://swiftModul.com/"
 }

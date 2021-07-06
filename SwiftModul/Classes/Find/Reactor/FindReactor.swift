@@ -42,7 +42,7 @@ final class FindReactor: Reactor {
             }
             page = 0
             currentState.refreshStatus.accept(.beingHeaderRefresh)
-            return serviceManager.findService
+            return FindRepo.shared
                 .getAllProducts(page: page)
                 .asObservable()
                 .map { [unowned self] (result) in
@@ -62,7 +62,7 @@ final class FindReactor: Reactor {
             }
             page += 1
             currentState.refreshStatus.accept(.beingFooterRefresh)
-            return serviceManager.findService
+            return FindRepo.shared
                 .getAllProducts(page: page)
                 .asObservable()
                 .map { [unowned self] (result) in

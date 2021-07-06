@@ -67,12 +67,6 @@ public class Network {
     }
 }
 
-extension Network {
-    func getAllProducts(parameters: [String: Any]) -> Single<[ProductInfoModel]> {
-        return request(.getAllProducts(parameters: parameters)).map { $0.data }
-    }
-}
-
 public struct ResponseModel<T: Decodable>: Decodable {
     let data: T
 }

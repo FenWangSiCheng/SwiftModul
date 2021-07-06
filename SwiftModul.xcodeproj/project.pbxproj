@@ -14,6 +14,7 @@
 		1537F2D3231CB49300A0D8F4 /* NSObjectExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537F2D2231CB49300A0D8F4 /* NSObjectExtention.swift */; };
 		1537F2F3231CFEC200A0D8F4 /* FindReactorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537F2F2231CFEC200A0D8F4 /* FindReactorTests.swift */; };
 		1537F2F7231D0D6400A0D8F4 /* FindServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537F2F6231D0D6400A0D8F4 /* FindServiceTests.swift */; };
+		1539A3CF269457DC0060A102 /* FindRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539A3CE269457DC0060A102 /* FindRepo.swift */; };
 		1552ADE022F0144E00A09A30 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552ADDF22F0144E00A09A30 /* SoundViewController.swift */; };
 		1552ADE422F014AB00A09A30 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552ADE322F014AB00A09A30 /* MeViewController.swift */; };
 		15A7ED8C268C4F580080D05E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A7ED87268C4F580080D05E /* AppRouter.swift */; };
@@ -44,8 +45,6 @@
 		4F3BEE8F20F4ACD900443FE3 /* SCCountdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BEE8E20F4ACD900443FE3 /* SCCountdownButton.swift */; };
 		4F3FBE3420BD337600554A72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3FBE3320BD337600554A72 /* Assets.xcassets */; };
 		4F421E7A20ECAFFE00479EFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7920ECAFFE00479EFF /* BaseViewController.swift */; };
-		4F421E7D20ECB17800479EFF /* FindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7C20ECB17800479EFF /* FindService.swift */; };
-		4F421E7F20ECB6C200479EFF /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7E20ECB6C200479EFF /* ServiceManager.swift */; };
 		4F5DB8DE20ABC91300999961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5DB8DD20ABC91300999961 /* AppDelegate.swift */; };
 		4F5DB8E320ABC91300999961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5DB8E120ABC91300999961 /* Main.storyboard */; };
 		4F5DB8E820ABC91500999961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5DB8E620ABC91500999961 /* LaunchScreen.storyboard */; };
@@ -99,6 +98,7 @@
 		15394A4B2629280E009A4E25 /* DevelopProject.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DevelopProject.xcconfig; sourceTree = "<group>"; };
 		15394A4C2629280E009A4E25 /* BaseProject.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = BaseProject.xcconfig; sourceTree = "<group>"; };
 		15394A4D2629280E009A4E25 /* StagingProject.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = StagingProject.xcconfig; sourceTree = "<group>"; };
+		1539A3CE269457DC0060A102 /* FindRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindRepo.swift; sourceTree = "<group>"; };
 		15429E9D237C113800E8340A /* SwiftModul copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftModul copy-Info.plist"; path = "/Users/wangsicheng/Desktop/SwiftModul/SwiftModul copy-Info.plist"; sourceTree = "<absolute>"; };
 		1552ADDF22F0144E00A09A30 /* SoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
 		1552ADE322F014AB00A09A30 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
@@ -137,8 +137,6 @@
 		4F3FBE3320BD337600554A72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F421E7720ECAFDB00479EFF /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		4F421E7920ECAFFE00479EFF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		4F421E7C20ECB17800479EFF /* FindService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindService.swift; sourceTree = "<group>"; };
-		4F421E7E20ECB6C200479EFF /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		4F5DB8DA20ABC91300999961 /* SwiftModul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftModul.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5DB8DD20ABC91300999961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F5DB8E220ABC91300999961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -261,6 +259,14 @@
 			path = Project;
 			sourceTree = "<group>";
 		};
+		1539A3CD269457DC0060A102 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1539A3CE269457DC0060A102 /* FindRepo.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		1552ADDD22F0144300A09A30 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,9 +351,7 @@
 		4F222C19215094A4008DFD5A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4F222C1A215094A4008DFD5A /* ResponseExtension.swift */,
 				4F222C1B215094A4008DFD5A /* Network.swift */,
-				4F222C1C215094A4008DFD5A /* SingleNetworkExtention.swift */,
 				4F222C1D215094A4008DFD5A /* NetworkTarget.swift */,
 				4F222C1E215094A4008DFD5A /* NetworkError.swift */,
 			);
@@ -434,6 +438,7 @@
 		4F3FBE3520BD34BD00554A72 /* Find */ = {
 			isa = PBXGroup;
 			children = (
+				1539A3CD269457DC0060A102 /* Repositories */,
 				15A7ED9B268C7ACD0080D05E /* Routing */,
 				15983E85223747E000D9820C /* Reactor */,
 				4F3BEE8620F44F6800443FE3 /* Views */,
@@ -448,15 +453,6 @@
 				15C345412317AB60009B2146 /* ProductInfoModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		4F421E7B20ECB0C300479EFF /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				4F421E7E20ECB6C200479EFF /* ServiceManager.swift */,
-				4F421E7C20ECB17800479EFF /* FindService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		4F5DB8D120ABC91300999961 = {
@@ -483,11 +479,10 @@
 		4F5DB8DC20ABC91300999961 /* SwiftModul */ = {
 			isa = PBXGroup;
 			children = (
-				15A7ED86268C4F580080D05E /* Routing */,
 				15394A432629280E009A4E25 /* Configurations */,
+				15A7ED86268C4F580080D05E /* Routing */,
 				15C345432317CE84009B2146 /* Resource */,
 				4F222C19215094A4008DFD5A /* Network */,
-				4F421E7B20ECB0C300479EFF /* Service */,
 				43BEB1A72243C8CF005B75E4 /* StoryBoard */,
 				4F222C24215094CD008DFD5A /* Utils */,
 				4FFC926F21096BF500F16BBE /* Extension */,
@@ -507,6 +502,8 @@
 		4FFC926F21096BF500F16BBE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4F222C1A215094A4008DFD5A /* ResponseExtension.swift */,
+				4F222C1C215094A4008DFD5A /* SingleNetworkExtention.swift */,
 				43BEB21A22524B9E005B75E4 /* DoubleExtentions.swift */,
 				15EAA74B22378A04009A85AC /* UserDefaultsExtensions.swift */,
 				4F679F5F213FDBE50019B847 /* ArrayExtensions.swift */,
@@ -821,12 +818,11 @@
 				4F222C1F215094A5008DFD5A /* ResponseExtension.swift in Sources */,
 				15A7ED98268C79B80080D05E /* SecondViewController.swift in Sources */,
 				150D284B2319142F001A4B12 /* UITableVIewExtentions.swift in Sources */,
-				4F421E7D20ECB17800479EFF /* FindService.swift in Sources */,
 				4FFC927521096BF500F16BBE /* UImageExtensions.swift in Sources */,
+				1539A3CF269457DC0060A102 /* FindRepo.swift in Sources */,
 				4FFC928921096F4300F16BBE /* NibLoadView.swift in Sources */,
 				4F679F5E213FDBD60019B847 /* UIApplicationExtensions.swift in Sources */,
 				15EAA74C22378A04009A85AC /* UserDefaultsExtensions.swift in Sources */,
-				4F421E7F20ECB6C200479EFF /* ServiceManager.swift in Sources */,
 				4F222C22215094A5008DFD5A /* NetworkTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
