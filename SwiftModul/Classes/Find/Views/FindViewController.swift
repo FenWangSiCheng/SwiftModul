@@ -56,6 +56,11 @@ extension FindViewController {
             self.automaticallyAdjustsScrollViewInsets = false
         }
         tableView.rowHeight = 150
+        tableView.rx.itemSelected
+          .subscribe(onNext: { _ in
+            let router: AppRouting = AppRouter.shared
+            router.route(to: URL(string: "\(UniversalLinks.baseURL)SecondViewController"), from: self, using: .show)
+          }).disposed(by: disposeBag)
     }
 
     private func setRefresh() {

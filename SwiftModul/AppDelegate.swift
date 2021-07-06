@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #elseif PRODUCTION
         print("3")
         #endif
+
+        let router: AppRouting = AppRouter.shared
+        router.register(path: "SecondViewController", navigator: SecondNavigator())
         return true
     }
 

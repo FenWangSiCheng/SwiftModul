@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LeO-tL-peH">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LeO-tL-peH">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Find View Controller-->
+        <!--Find-->
         <scene sceneID="ucK-Xg-bcS">
             <objects>
                 <viewController id="bKK-gJ-pjU" customClass="FindViewController" customModule="SwiftModul" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H2b-qE-ld6">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindTableViewCell" rowHeight="73" id="a4m-is-X9J" customClass="FindTableViewCell" customModule="SwiftModul" customModuleProvider="target">
@@ -59,6 +57,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="14M-n0-v2Z"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="H2b-qE-ld6" firstAttribute="top" secondItem="14M-n0-v2Z" secondAttribute="top" id="03c-9R-zCn"/>
@@ -66,9 +65,8 @@
                             <constraint firstItem="14M-n0-v2Z" firstAttribute="bottom" secondItem="H2b-qE-ld6" secondAttribute="bottom" id="QGG-xo-4ME"/>
                             <constraint firstItem="14M-n0-v2Z" firstAttribute="trailing" secondItem="H2b-qE-ld6" secondAttribute="trailing" id="p5Y-32-tkC"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="14M-n0-v2Z"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pv1-c1-tgx"/>
+                    <navigationItem key="navigationItem" title="Find" id="pv1-c1-tgx"/>
                     <connections>
                         <outlet property="tableView" destination="H2b-qE-ld6" id="D05-lH-nT8"/>
                     </connections>
@@ -77,6 +75,22 @@
             </objects>
             <point key="canvasLocation" x="1616.8" y="-537.48125937031489"/>
         </scene>
+        <!--Second-->
+        <scene sceneID="mQ3-JL-Xw9">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="Jdl-wS-8la" customClass="SecondViewController" customModule="SwiftModul" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b5w-F5-XUQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Qa4-h9-S6Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Second" id="Ii5-mY-Qgp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNV-hC-W3R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2302" y="-537"/>
+        </scene>
         <!--Base Navigation Controller-->
         <scene sceneID="MNX-mm-paC">
             <objects>
@@ -84,7 +98,7 @@
                     <tabBarItem key="tabBarItem" title="" image="tabbar_find_n" selectedImage="tabbar_find_h" id="GaW-gr-aRM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZvM-fm-h2G" customClass="BaseNavigaitionBar" customModule="SwiftModul" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -100,5 +114,8 @@
     <resources>
         <image name="tabbar_find_h" width="31" height="49"/>
         <image name="tabbar_find_n" width="31" height="49"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -16,6 +16,15 @@
 		1537F2F7231D0D6400A0D8F4 /* FindServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537F2F6231D0D6400A0D8F4 /* FindServiceTests.swift */; };
 		1552ADE022F0144E00A09A30 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552ADDF22F0144E00A09A30 /* SoundViewController.swift */; };
 		1552ADE422F014AB00A09A30 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552ADE322F014AB00A09A30 /* MeViewController.swift */; };
+		15A7ED8C268C4F580080D05E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A7ED87268C4F580080D05E /* AppRouter.swift */; };
+		15A7ED8D268C4F580080D05E /* Navigating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A7ED88268C4F580080D05E /* Navigating.swift */; };
+		15A7ED8E268C4F580080D05E /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A7ED89268C4F580080D05E /* TransitionType.swift */; };
+		15A7ED8F268C4F580080D05E /* UniversalLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A7ED8A268C4F580080D05E /* UniversalLinks.swift */; };
+		15A7ED90268C4F580080D05E /* AppRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A7ED8B268C4F580080D05E /* AppRouting.swift */; };
+		15A7ED94268C50040080D05E /* RoutingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A7ED93268C50030080D05E /* RoutingSource.swift */; };
+		15A7ED98268C79B80080D05E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A7ED97268C79B80080D05E /* SecondViewController.swift */; };
+		15A7ED9D268C7B960080D05E /* SecondNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A7ED9C268C7B960080D05E /* SecondNavigator.swift */; };
+		15A7EDA4268C7FEB0080D05E /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7720ECAFDB00479EFF /* FindViewController.swift */; };
 		15C345422317AB60009B2146 /* ProductInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C345412317AB60009B2146 /* ProductInfoModel.swift */; };
 		15C345462317CE84009B2146 /* AllProductInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C345442317CE84009B2146 /* AllProductInfo.json */; };
 		15EAA74C22378A04009A85AC /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EAA74B22378A04009A85AC /* UserDefaultsExtensions.swift */; };
@@ -34,7 +43,6 @@
 		4F3BEE8C20F4908B00443FE3 /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BEE8B20F4908B00443FE3 /* Refreshable.swift */; };
 		4F3BEE8F20F4ACD900443FE3 /* SCCountdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BEE8E20F4ACD900443FE3 /* SCCountdownButton.swift */; };
 		4F3FBE3420BD337600554A72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3FBE3320BD337600554A72 /* Assets.xcassets */; };
-		4F421E7820ECAFDB00479EFF /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7720ECAFDB00479EFF /* FindViewController.swift */; };
 		4F421E7A20ECAFFE00479EFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7920ECAFFE00479EFF /* BaseViewController.swift */; };
 		4F421E7D20ECB17800479EFF /* FindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7C20ECB17800479EFF /* FindService.swift */; };
 		4F421E7F20ECB6C200479EFF /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F421E7E20ECB6C200479EFF /* ServiceManager.swift */; };
@@ -94,6 +102,14 @@
 		15429E9D237C113800E8340A /* SwiftModul copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftModul copy-Info.plist"; path = "/Users/wangsicheng/Desktop/SwiftModul/SwiftModul copy-Info.plist"; sourceTree = "<absolute>"; };
 		1552ADDF22F0144E00A09A30 /* SoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
 		1552ADE322F014AB00A09A30 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		15A7ED87268C4F580080D05E /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		15A7ED88268C4F580080D05E /* Navigating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigating.swift; sourceTree = "<group>"; };
+		15A7ED89268C4F580080D05E /* TransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionType.swift; sourceTree = "<group>"; };
+		15A7ED8A268C4F580080D05E /* UniversalLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalLinks.swift; sourceTree = "<group>"; };
+		15A7ED8B268C4F580080D05E /* AppRouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouting.swift; sourceTree = "<group>"; };
+		15A7ED93268C50030080D05E /* RoutingSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingSource.swift; sourceTree = "<group>"; };
+		15A7ED97268C79B80080D05E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		15A7ED9C268C7B960080D05E /* SecondNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondNavigator.swift; sourceTree = "<group>"; };
 		15C345412317AB60009B2146 /* ProductInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoModel.swift; sourceTree = "<group>"; };
 		15C345442317CE84009B2146 /* AllProductInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllProductInfo.json; sourceTree = "<group>"; };
 		15EAA74B22378A04009A85AC /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
@@ -285,6 +301,27 @@
 			path = Reactor;
 			sourceTree = "<group>";
 		};
+		15A7ED86268C4F580080D05E /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				15A7ED93268C50030080D05E /* RoutingSource.swift */,
+				15A7ED87268C4F580080D05E /* AppRouter.swift */,
+				15A7ED88268C4F580080D05E /* Navigating.swift */,
+				15A7ED89268C4F580080D05E /* TransitionType.swift */,
+				15A7ED8A268C4F580080D05E /* UniversalLinks.swift */,
+				15A7ED8B268C4F580080D05E /* AppRouting.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		15A7ED9B268C7ACD0080D05E /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				15A7ED9C268C7B960080D05E /* SecondNavigator.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		15C345432317CE84009B2146 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,7 +368,9 @@
 		4F3BEE8620F44F6800443FE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4F421E7720ECAFDB00479EFF /* FindViewController.swift */,
 				4F3BEE8720F44F8900443FE3 /* FindTableViewCell.swift */,
+				15A7ED97268C79B80080D05E /* SecondViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,7 +434,7 @@
 		4F3FBE3520BD34BD00554A72 /* Find */ = {
 			isa = PBXGroup;
 			children = (
-				4F421E7620ECAFBF00479EFF /* Controllers */,
+				15A7ED9B268C7ACD0080D05E /* Routing */,
 				15983E85223747E000D9820C /* Reactor */,
 				4F3BEE8620F44F6800443FE3 /* Views */,
 				4F421E6F20ECA2B100479EFF /* Models */,
@@ -409,14 +448,6 @@
 				15C345412317AB60009B2146 /* ProductInfoModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		4F421E7620ECAFBF00479EFF /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				4F421E7720ECAFDB00479EFF /* FindViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		4F421E7B20ECB0C300479EFF /* Service */ = {
@@ -452,6 +483,7 @@
 		4F5DB8DC20ABC91300999961 /* SwiftModul */ = {
 			isa = PBXGroup;
 			children = (
+				15A7ED86268C4F580080D05E /* Routing */,
 				15394A432629280E009A4E25 /* Configurations */,
 				15C345432317CE84009B2146 /* Resource */,
 				4F222C19215094A4008DFD5A /* Network */,
@@ -761,25 +793,33 @@
 				4FCA670420BD07EC00E59545 /* BaseNavigationController.swift in Sources */,
 				4F222C23215094A5008DFD5A /* NetworkError.swift in Sources */,
 				4F421E7A20ECAFFE00479EFF /* BaseViewController.swift in Sources */,
-				4F421E7820ECAFDB00479EFF /* FindViewController.swift in Sources */,
 				4FFC927421096BF500F16BBE /* UIColorExtensions.swift in Sources */,
 				4F3BEE8820F44F8900443FE3 /* FindTableViewCell.swift in Sources */,
 				4F07AB5721084EBC00EA79C3 /* Const.swift in Sources */,
+				15A7ED90268C4F580080D05E /* AppRouting.swift in Sources */,
+				15A7ED8C268C4F580080D05E /* AppRouter.swift in Sources */,
 				4F3BEE8C20F4908B00443FE3 /* Refreshable.swift in Sources */,
 				4F222C2C215094CE008DFD5A /* QRCodeScanTool.swift in Sources */,
 				4F3BEE8F20F4ACD900443FE3 /* SCCountdownButton.swift in Sources */,
+				15A7ED8F268C4F580080D05E /* UniversalLinks.swift in Sources */,
+				15A7ED9D268C7B960080D05E /* SecondNavigator.swift in Sources */,
 				4FFC928D2109772700F16BBE /* UIViewControllerExtensions.swift in Sources */,
 				4F679F58213FDBB40019B847 /* UIViewExtensions.swift in Sources */,
+				15A7ED94268C50040080D05E /* RoutingSource.swift in Sources */,
 				4F679F5C213FDBCD0019B847 /* UIStoryboardExtensions.swift in Sources */,
 				1552ADE022F0144E00A09A30 /* SoundViewController.swift in Sources */,
+				15A7ED8D268C4F580080D05E /* Navigating.swift in Sources */,
 				4F222C20215094A5008DFD5A /* Network.swift in Sources */,
 				4FBC85A021ACEFA10087D3B2 /* FPWebViewController.swift in Sources */,
+				15A7ED8E268C4F580080D05E /* TransitionType.swift in Sources */,
 				15254C1C225B421200D18909 /* EmptyDataView.swift in Sources */,
 				43BEB21B22524B9E005B75E4 /* DoubleExtentions.swift in Sources */,
 				4FCA670020BD07B500E59545 /* BaseTabarController.swift in Sources */,
+				15A7EDA4268C7FEB0080D05E /* FindViewController.swift in Sources */,
 				4F222C2B215094CE008DFD5A /* HUD.swift in Sources */,
 				15C345422317AB60009B2146 /* ProductInfoModel.swift in Sources */,
 				4F222C1F215094A5008DFD5A /* ResponseExtension.swift in Sources */,
+				15A7ED98268C79B80080D05E /* SecondViewController.swift in Sources */,
 				150D284B2319142F001A4B12 /* UITableVIewExtentions.swift in Sources */,
 				4F421E7D20ECB17800479EFF /* FindService.swift in Sources */,
 				4FFC927521096BF500F16BBE /* UImageExtensions.swift in Sources */,

@@ -26,7 +26,7 @@ extension UIStoryboard {
         case home
         case find
         case QRCode
-        case cart
+        case sound
         case me
         var name: String {
             return rawValue.capitalized
